@@ -1,0 +1,15 @@
+
+  {
+    "helloWorld": "Ahoj světe",
+    "indexNote": "Tohle je index stránka.",
+    "secondPageLink": "Link to second page",
+    "thirdPageLink": "Link to third page",
+    "indexPageLink": "Link to index page",
+    "secondPageGermanLink": "Link to second page (German)",
+    "English": "Angličitna",
+    "Czech": "Čeština",
+    "overviewLang": "Přehled jazyků",
+    "thirdPage": "Third page",
+    "thirdNote": "This is the third page",
+    "home": "Home"
+  }
