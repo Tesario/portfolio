@@ -5,6 +5,7 @@ module.exports = {
     url: "https://www.vojtech-tesar.cz",
     author: "Vojtěch Tesař",
     image: "./src/images/icon.png",
+    themeColor: "#26283d",
   },
   plugins: [
     {
@@ -26,7 +27,14 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        name: "Vojtěch Tesař",
+        short_name: "Vojtěch Tesař",
+        start_url: "/",
+        background_color: "#6b37bf",
+        theme_color: "#26283d",
+        display: "standalone",
+        icon: "./src/images/icon.png",
+        crossOrigin: `use-credentials`,
       },
     },
     "gatsby-plugin-sharp",
