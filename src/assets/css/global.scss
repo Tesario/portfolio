@@ -1,20 +1,123 @@
+@import "_reset.scss";
+
+// Colors
+$white: #fff;
+$black: #000;
+$black-bg:#26283d;
+$gray: #a8b2d1;
+$blue: #18a0fb;
+$card-bg: #3c3e50;
+
+// Font Sizes
+$title-size: 3em;
+$title-2-size: 2em;
+$title-3-size: 1.5em;
+$menu-size: 1.1em;
+$button-size: 1.2em;
+
+// Font Families
+$main-font: "Montserrat";
+
+// Line Height
+$line-height: 1.4em;
+
+// Breakpoints
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    line-height: $line-height;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: $white;
+    letter-spacing: .1px;
+
+    main {
+        flex: 1;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: none !important;
+    transition: .2s ease-in-out;
+}
+
 img {
     height: 100%;
     width: 100%;
     object-fit: contain;
 }
 
-.tech {
+button,
+a,
+input,
+textarea {
+    box-sizing: border-box;
+}
+
+.btn {
+    border: 0;
+    font-size: $button-size;
+    padding: .5rem 1rem;
+    border-radius: .4rem;
+}
+
+.btn-primary {
+    color: $white;
+    background-color: $blue;
     display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    &:focus,
+    &:hover {
+        background-color: darken($blue, 15%);
+    }
+}
 
-        .image {
-            width: 100px;
-            height: 100px;
-        }
+.title {
+    font-size: $title-size;
+    padding: 0 0 .5rem;
+    margin: 0 0 1rem;
+
+    @media (max-width: $lg) {
+        font-size: 1.7em;
+    }
+}
+
+.title-2 {
+    font-size: $title-2-size;
+    line-height: $line-height;
+    margin-bottom: 1rem;
+}
+
+.title-3 {
+    font-size: $title-3-size;
+    line-height: $line-height;
+    margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: $line-height;
+}
+
+section {
+    padding: 3rem 0;
+
+    @media (max-width: $lg) {
+        padding: 1.5rem 0;
     }
 }

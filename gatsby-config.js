@@ -1,7 +1,9 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "portfolio",
+    title: "Vojtěch Tesař",
+    description: "Vojtěch Tesař - Full-stack developer",
+    url: "https://www.vojtech-tesar.cz",
+    author: "Vojtěch Tesař",
   },
   plugins: [
     {
@@ -51,6 +53,13 @@ module.exports = {
           keySeparator: false,
           nsSeparator: false,
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Montserrat`, `source sans pro\:300,400,700`],
+        display: "swap",
       },
     },
   ],
