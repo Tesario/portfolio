@@ -34,7 +34,9 @@ module.exports = {
         theme_color: "#18a0fb",
         display: "standalone",
         icon: "./src/images/icon.png",
-        crossOrigin: `use-credentials`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
       },
     },
     "gatsby-plugin-sharp",
@@ -73,9 +75,6 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-offline`,
-      options: {
-        appendScript: require.resolve(`./sw.js`),
-      },
     },
   ],
 };
