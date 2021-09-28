@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next";
 import Image from "gatsby-image";
 import Seo from "../components/Seo";
 import "../assets/css/global.scss";
 
-const Index = () => {
+const Index = (props) => {
   const { t } = useTranslation();
+
   return (
     <main>
-      <Seo />
+      <Seo lang={props.pageContext.language} />
       <div>{t("helloWorld")}</div>
       <div>
         <Link to="/" language="cs">
@@ -23,7 +24,7 @@ const Index = () => {
   );
 };
 
-export const query = graphql`
+export const data = graphql`
   query ($language: String!) {
     locales: allLocale(filter: { language: { eq: $language } }) {
       edges {

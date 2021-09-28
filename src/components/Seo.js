@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby";
 const Seo = (props) => {
   const {
     site: {
-      siteMetadata: { title, description, url, author },
+      siteMetadata: { title, description, url, author, image },
     },
   } = useStaticQuery(graphql`
     {
@@ -15,6 +15,7 @@ const Seo = (props) => {
           description
           url
           author
+          image
         }
       }
     }
@@ -23,6 +24,7 @@ const Seo = (props) => {
   const metaDescription = props.description || description;
   const metaTitle = props.title || title;
   const metaAuthor = props.author || author;
+  const metaImage = image;
   const metaUrl = props.url || url;
   const metaKeywords = props.keywords || [
     "Vojtěch Tesař",
@@ -42,6 +44,14 @@ const Seo = (props) => {
           content: metaTitle,
         },
         {
+          property: "og:url",
+          content: metaUrl,
+        },
+        {
+          property: "og:image",
+          content: metaImage,
+        },
+        {
           property: "og:description",
           content: metaDescription,
         },
@@ -57,7 +67,9 @@ const Seo = (props) => {
             }
           : []
       )}
-    />
+    >
+      <html lang={props.lang} />
+    </Helmet>
   );
 };
 

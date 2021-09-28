@@ -4,6 +4,7 @@ module.exports = {
     description: "Vojtěch Tesař - Full-stack developer",
     url: "https://www.vojtech-tesar.cz",
     author: "Vojtěch Tesař",
+    image: "./src/images/icon.png",
   },
   plugins: [
     {
@@ -11,6 +12,13 @@ module.exports = {
       options: {
         accessToken: "15rzbJT0iZ0v7R2pbP32-Lry4YTOFQTVkeBHuGl-OXA",
         spaceId: "21wj6gzely1i",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Montserrat`, `source sans pro\:300,400,400i,700`],
+        display: "swap",
       },
     },
     "gatsby-plugin-sass",
@@ -53,13 +61,6 @@ module.exports = {
           keySeparator: false,
           nsSeparator: false,
         },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Montserrat`, `source sans pro\:300,400,700`],
-        display: "swap",
       },
     },
   ],
