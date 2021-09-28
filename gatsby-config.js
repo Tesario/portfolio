@@ -5,7 +5,7 @@ module.exports = {
     url: "https://www.vojtech-tesar.cz",
     author: "Vojtěch Tesař",
     image: "./src/images/icon.png",
-    themeColor: "#26283d",
+    themeColor: "#18a0fb",
   },
   plugins: [
     {
@@ -30,8 +30,8 @@ module.exports = {
         name: "Vojtěch Tesař",
         short_name: "Vojtěch Tesař",
         start_url: "/",
-        background_color: "#6b37bf",
-        theme_color: "#26283d",
+        background_color: "#26283d",
+        theme_color: "#18a0fb",
         display: "standalone",
         icon: "./src/images/icon.png",
         crossOrigin: `use-credentials`,
@@ -69,6 +69,12 @@ module.exports = {
           keySeparator: false,
           nsSeparator: false,
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        appendScript: require.resolve(`./sw.js`),
       },
     },
   ],
