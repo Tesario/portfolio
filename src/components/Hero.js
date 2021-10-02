@@ -5,7 +5,7 @@ import Image from "gatsby-image";
 import "./Hero.scss";
 
 const Hero = () => {
-  const windowWidth = useWindowSize().width;
+  const [width, setWidth] = useState("");
   const {
     contentfulHeroSection: {
       motto,
@@ -14,13 +14,19 @@ const Hero = () => {
     allImageSharp: { nodes },
   } = useStaticQuery(query);
 
+  useEffect(() => {
+    if (window !== undefined) {
+      setWidth(window.innerWidth);
+    }
+  }, []);
+
   return (
     <section id="hero">
       <div className="bg-image">
         <Image fluid={fluid} alt="Background" />
       </div>
       <div className="curve">
-        {windowWidth > 768 ? (
+        {width > 768 ? (
           <Image fluid={nodes[1].fluid} alt="Background" />
         ) : (
           <Image fluid={nodes[0].fluid} alt="Background" />
@@ -62,24 +68,5 @@ const query = graphql`
     }
   }
 `;
-
-const useWindowSize = () => {
-  const [windowSize, setWindowSize] = useState({
-    width: undefined,
-    height: undefined,
-  });
-  useEffect(() => {
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  return windowSize;
-};
 
 export default Hero;
