@@ -80,6 +80,10 @@ const Seo = (props) => {
           name: "theme-color",
           content: themeColor,
         },
+        {
+          name: "google-site-verification",
+          content: "Xvc_bLyCKhp7sGsVcjA4aPMHKb4fR5XLWrNjqH24Yds",
+        },
       ].concat(
         metaKeywords && metaKeywords.length > 0
           ? {
