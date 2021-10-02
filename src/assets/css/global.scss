@@ -112,7 +112,11 @@ textarea {
     margin-bottom: 1rem;
 
     @media (max-width: $lg) {
-        font-size: 1.7em;
+        font-size: 2.5em;
+    }
+
+    @media (max-width: $sm) {
+        font-size: 1.8em;
     }
 }
 
@@ -120,12 +124,28 @@ textarea {
     font-size: $title-2-size;
     line-height: $line-height;
     margin-bottom: 1.5rem;
+
+    @media (max-width: $lg) {
+        font-size: 2em;
+    }
+
+    @media (max-width: $sm) {
+        font-size: 1.5em;
+    }
 }
 
 .title-3 {
     font-size: $title-3-size;
     line-height: $line-height;
     margin-bottom: 1.5rem;
+
+    @media (max-width: $lg) {
+        font-size: 1.2em;
+    }
+
+    @media (max-width: $sm) {
+        font-size: .8em;
+    }
 }
 
 h1,
