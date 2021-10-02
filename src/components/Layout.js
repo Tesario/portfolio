@@ -13,7 +13,7 @@ const Layout = (props) => {
   const { t } = useTranslation();
   const { originalPath } = useI18next();
   const {
-    allImageSharp: { nodes },
+    imageSharp: { fluid },
   } = useStaticQuery(query);
 
   const toggleMenu = (e, alwaysClose = false) => {
@@ -61,7 +61,7 @@ const Layout = (props) => {
               scrollToSection("#hero", e);
             }}
           >
-            <Image fluid={nodes[0].fluid} alt="Icon" />
+            <Image fluid={fluid} alt="Icon" />
           </a>
           <div className="menu-wrapper" ref={menuRef}>
             <ul className="menu">
@@ -181,11 +181,9 @@ const Layout = (props) => {
 
 const query = graphql`
   {
-    allImageSharp(filter: { fluid: { originalName: { eq: "icon.png" } } }) {
-      nodes {
-        fluid(maxWidth: 100) {
-          ...GatsbyImageSharpFluid
-        }
+    imageSharp(fluid: { originalName: { eq: "icon.png" } }) {
+      fluid(maxWidth: 100) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

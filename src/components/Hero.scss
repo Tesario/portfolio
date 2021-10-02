@@ -55,6 +55,12 @@
         .title-3 {
             text-align: center;
         }
+
+        .title-3 {
+            @media (max-width: $sm) {
+                font-size: .85em;
+            }
+        }
     }
 
     .curve {

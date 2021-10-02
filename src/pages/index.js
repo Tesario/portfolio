@@ -9,9 +9,7 @@ import "../assets/css/global.scss";
 const Index = (props) => {
   const {
     pageContext: { language },
-    data: {
-      whoIAm: { nodes },
-    },
+    data: { whoIAm, infoCards },
   } = props;
 
   return (
@@ -20,7 +18,7 @@ const Index = (props) => {
       <Layout lang={language}>
         <main>
           <Hero />
-          <WhoIAm desc={nodes[0].text} />
+          <WhoIAm desc={whoIAm.text} infoCards={infoCards.nodes} />
         </main>
       </Layout>
     </>
@@ -38,11 +36,25 @@ export const data = graphql`
         }
       }
     }
-    whoIAm: allContentfulDescriptions(
-      filter: { title: { eq: "Kdo jsem?" }, node_locale: { eq: $language } }
+    whoIAm: contentfulDescriptions(
+      title: { eq: "Kdo jsem?" }
+      node_locale: { eq: $language }
+    ) {
+      text {
+        raw
+      }
+    }
+    infoCards: allContentfulInfoCards(
+      filter: { node_locale: { eq: $language } }
     ) {
       nodes {
-        text {
+        icon {
+          file {
+            url
+          }
+        }
+        title
+        description {
           raw
         }
       }

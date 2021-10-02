@@ -1,4 +1,3 @@
-const { BLOCKS, MARKS, INLINES } = require("@contentful/rich-text-types");
 module.exports = {
   siteMetadata: {
     title: "Vojtěch Tesař",
@@ -78,8 +77,7 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-plugin-offline`,
-    },
+
+    "gatsby-plugin-offline",
   ],
 };
