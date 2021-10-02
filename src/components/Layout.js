@@ -69,7 +69,7 @@ const Layout = (props) => {
                 <a
                   href="/#"
                   onClick={(e) => {
-                    scrollToSection("#hero", e);
+                    scrollToSection("#who-i-am", e);
                     toggleMenu(e);
                   }}
                 >
