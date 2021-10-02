@@ -4,8 +4,14 @@
     color: $white;
     flex: 1;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
+    padding-top: calc(60px + 1rem);
     box-sizing: border-box;
+    position: relative;
+
+    @media (max-width: $lg) {
+        padding-top: calc(60px + .5rem);
+    }
 
     .bg-image {
         position: absolute;
@@ -41,6 +47,26 @@
         .title-2,
         .title-3 {
             text-align: center;
+        }
+    }
+
+    .curve {
+        @include pseudo-elem;
+        top: unset;
+        bottom: 0;
+        height: 50px;
+        max-width: 100%;
+
+        @media (max-width: $lg) {
+            height: 30px;
+        }
+
+        .gatsby-image-wrapper {
+            height: 100%;
+        }
+
+        img {
+            object-fit: fill !important;
         }
     }
 }

@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
+import WhoIAm from "../components/WhoIAm";
 import "../assets/css/global.scss";
 
 const Index = (props) => {
@@ -16,6 +17,7 @@ const Index = (props) => {
       <Layout lang={language}>
         <main>
           <Hero />
+          <WhoIAm />
         </main>
       </Layout>
     </>

@@ -10,12 +10,20 @@ const Hero = () => {
       motto,
       background: { fluid },
     },
+    allImageSharp: { nodes },
   } = useStaticQuery(query);
 
   return (
     <section id="hero">
       <div className="bg-image">
         <Image fluid={fluid} alt="Background" />
+      </div>
+      <div className="curve">
+        {window.innerWidth > 768 ? (
+          <Image fluid={nodes[1].fluid} alt="Background" />
+        ) : (
+          <Image fluid={nodes[0].fluid} alt="Background" />
+        )}
       </div>
       <div className="container">
         <div className="content">
@@ -37,6 +45,17 @@ const query = graphql`
       background {
         fluid {
           ...GatsbyContentfulFluid
+        }
+      }
+    }
+    allImageSharp(
+      filter: {
+        fluid: { originalName: { in: ["bg-curve.png", "bg-curve-mobile.png"] } }
+      }
+    ) {
+      nodes {
+        fluid(maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
