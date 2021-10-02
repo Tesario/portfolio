@@ -3,16 +3,17 @@
 // Colors
 $white: #fff;
 $black: #000;
-$black-bg:#26283d;
+$black-bg:#0d1117;
+$dark:#26283d;
 $gray: #a8b2d1;
 $blue: #18a0fb;
 $card-bg: #3c3e50;
 
 // Font Sizes
-$title-size: 3em;
-$title-2-size: 2em;
+$title-size: 4.5em;
+$title-2-size: 3em;
 $title-3-size: 1.5em;
-$menu-size: 1.1em;
+$menu-size: 1em;
 $button-size: 1.2em;
 
 // Font Families
@@ -29,18 +30,42 @@ $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
 
+@mixin hamburger-bar {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: var(--primary-color);
+    transition: .2s ease-in-out;
+}
+
+@mixin pseudo-elem {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
+    font-weight: 300;
     line-height: $line-height;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     letter-spacing: .1px;
 
     main {
         flex: 1;
+        display: flex;
     }
+}
+
+#gatsby-focus-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 a {
@@ -84,8 +109,7 @@ textarea {
 
 .title {
     font-size: $title-size;
-    padding: 0 0 .5rem;
-    margin: 0 0 1rem;
+    margin-bottom: 1rem;
 
     @media (max-width: $lg) {
         font-size: 1.7em;
@@ -95,13 +119,13 @@ textarea {
 .title-2 {
     font-size: $title-2-size;
     line-height: $line-height;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .title-3 {
     font-size: $title-3-size;
     line-height: $line-height;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 h1,
@@ -118,5 +142,34 @@ section {
 
     @media (max-width: $lg) {
         padding: 1.5rem 0;
+    }
+}
+
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (min-width: 576px) {
+        max-width: 540px;
+    }
+
+    @media (min-width: 768px) {
+        max-width: 720px;
+    }
+
+    @media (min-width: 992px) {
+        max-width: 960px;
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 1140px;
+    }
+
+    @media (min-width: 1400px) {
+        max-width: 1320px;
     }
 }

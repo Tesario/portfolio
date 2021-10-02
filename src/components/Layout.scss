@@ -1,0 +1,208 @@
+@import "../assets/css/global.scss";
+
+#navbar {
+    width: 100%;
+    position: fixed;
+    top: 1rem;
+    z-index: 1500;
+    transition: .2s ease-in-out;
+
+    @media (max-width: $sm) {
+        top: .5rem;
+        padding: 0 .5rem;
+        box-sizing: border-box;
+    }
+
+    &.scrolling {
+        @media (min-width: $lg) {
+            background-color: var(--secondary-color);
+
+            .menu-wrapper {
+                padding: 1rem 0;
+            }
+        }
+    }
+
+    @media (max-width: $lg) {
+        background-color: var(--secondary-color);
+        border-bottom: 1px solid var(--primary-color);
+    }
+
+    .hamburger {
+        cursor: pointer;
+        display: flex;
+        top: 0;
+        right: 1rem;
+        position: absolute;
+        z-index: 2000;
+
+        @media (min-width: $lg) {
+            display: none;
+        }
+
+        svg {
+            width: 60px;
+            height: 60px;
+            transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .active svg {
+            transform: rotate(90deg);
+        }
+
+        path {
+            pointer-events: none;
+            transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        path:nth-child(1) {
+            transform-origin: 36% 40%;
+        }
+
+        path:nth-child(2) {
+            stroke-dasharray: 29 299;
+        }
+
+        path:nth-child(3) {
+            transform-origin: 35% 63%;
+        }
+
+        path:nth-child(4) {
+            stroke-dasharray: 29 299;
+        }
+
+        path:nth-child(5) {
+            transform-origin: 61% 52%;
+        }
+
+        path:nth-child(6) {
+            transform-origin: 62% 52%;
+        }
+
+        .active path:nth-child(1) {
+            transform: translateX(9px) translateY(1px) rotate(45deg);
+        }
+
+        .active path:nth-child(2) {
+            stroke-dasharray: 225 299;
+            stroke-dashoffset: -72px;
+        }
+
+        .active path:nth-child(3) {
+            transform: translateX(9px) translateY(1px) rotate(-45deg);
+        }
+
+        .active path:nth-child(4) {
+            stroke-dasharray: 225 299;
+            stroke-dashoffset: -72px;
+        }
+
+        .active path:nth-child(5) {
+            transform: translateX(9px) translateY(1px) rotate(-45deg);
+        }
+
+        .active path:nth-child(6) {
+            transform: translateX(9px) translateY(1px) rotate(45deg);
+        }
+    }
+
+    .container {
+        background-color: $card-bg;
+        border-radius: 30px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .5rem 2.5rem;
+        position: relative;
+
+        @media (max-width: $lg) {
+            height: 60px;
+        }
+    }
+
+    .brand {
+        width: 45px;
+        height: 45px;
+    }
+
+    .menu-wrapper {
+        @media (max-width: $lg) {
+            padding: 0;
+            position: fixed;
+            z-index: 1500;
+            overflow: hidden;
+            top: 0;
+            right: 0;
+            pointer-events: none;
+
+            &.show {
+                pointer-events: unset;
+
+                .menu {
+                    transform: translateX(0%);
+                }
+            }
+        }
+
+        li {
+            &:not(:last-child) {
+                margin-right: 2rem;
+            }
+
+            @media (max-width: $lg) {
+                margin: 1rem 0 0;
+            }
+        }
+
+        a {
+            color: $white;
+            font-size: $menu-size;
+        }
+
+        .lang {
+            font-weight: 600;
+        }
+    }
+
+    .menu {
+        display: flex;
+        transition: .4s ease-in-out;
+
+        @media (max-width: $lg) {
+            transform: translateX(100%);
+            height: 100vh;
+            padding: 12rem calc(2rem + 40px) 8rem 2rem;
+            background-color: $black-bg;
+            flex-direction: column;
+        }
+    }
+}
+
+#dark-overlay {
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 900;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .2s ease-in-out;
+    background-color: $black;
+
+    &.show {
+        pointer-events: unset;
+        opacity: .75;
+    }
+}
+
+#footer {
+    color: $white;
+    padding: 1rem;
+    text-align: center;
+    background-color: $black-bg;
+}

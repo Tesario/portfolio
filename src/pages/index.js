@@ -1,26 +1,27 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next";
-import Image from "gatsby-image";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 import Seo from "../components/Seo";
+import Layout from "../components/Layout";
+import Hero from "../components/Hero";
+import "../components/Layout.scss";
 import "../assets/css/global.scss";
 
 const Index = (props) => {
   const { t } = useTranslation();
+  const {
+    pageContext: { language },
+  } = props;
 
   return (
-    <main>
-      <Seo lang={props.pageContext.language} />
-      <div>{t("helloWorld")}</div>
-      <div>
-        <Link to="/" language="cs">
-          <Trans>ČJ</Trans>
-        </Link>
-      </div>
-      <Link to="/" language="en">
-        <Trans>EN</Trans>
-      </Link>
-    </main>
+    <>
+      <Seo lang={language} />
+      <Layout lang={language}>
+        <main>
+          <Hero />
+        </main>
+      </Layout>
+    </>
   );
 };
 

@@ -1,10 +1,11 @@
+const { BLOCKS, MARKS, INLINES } = require("@contentful/rich-text-types");
 module.exports = {
   siteMetadata: {
     title: "Vojtěch Tesař",
     description: "Vojtěch Tesař - Full-stack developer",
     url: "https://www.vojtech-tesar.cz",
     author: "Vojtěch Tesař",
-    image: "./src/images/icon.png",
+    image: "./src/assets/images/icon.png",
     themeColor: "#18a0fb",
   },
   plugins: [
@@ -18,7 +19,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Montserrat`, `source sans pro\:300,400,400i,700`],
+        fonts: [`Montserrat`, `source sans pro\:300,600`],
         display: "swap",
       },
     },
@@ -33,7 +34,7 @@ module.exports = {
         background_color: "#26283d",
         theme_color: "#18a0fb",
         display: "standalone",
-        icon: "./src/images/icon.png",
+        icon: "./src/assets/images/icon.png",
         icon_options: {
           purpose: `any maskable`,
         },
@@ -45,7 +46,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: "./src/assets/images/",
       },
       __key: "images",
     },
