@@ -30,7 +30,7 @@
 
         &::after {
             @include pseudo-elem;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 32%, rgba(0, 0, 0, 0.85) 67%, rgba(0, 0, 0, 0.1) 100%);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.75) 25%, rgba(0, 0, 0, 0.83) 32%, rgba(0, 0, 0, 0.83) 67%, rgba(0, 0, 0, 0.75) 74%, rgba(0, 0, 0, 0.1) 100%);
             top: unset;
             bottom: var(--scroll-y);
             opacity: var(--opacity);

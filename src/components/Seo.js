@@ -30,6 +30,14 @@ const Seo = (props) => {
   const metaKeywords = props.keywords || [
     "Vojtěch Tesař",
     "Full-stack developer",
+    "Fullstack",
+    "Vývojář",
+    "Vývoj webů a webových aplikací",
+    "Web design",
+    "Responsivita",
+    "Responsivita",
+    "Kódování",
+    "Web design",
   ];
 
   return (
