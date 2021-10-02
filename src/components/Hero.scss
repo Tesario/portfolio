@@ -71,6 +71,10 @@
             bottom: 0;
             top: unset;
             height: 1px;
+
+            @media (min-width: 1920px) {
+                height: 3px;
+            }
         }
     }
 }
