@@ -2,15 +2,21 @@
 
 #who-i-am {
     color: $white;
-    background-color: $black-bg;
-    padding: 5rem 0 15rem;
-    margin-bottom: 15rem;
+    padding-top: 0;
+
+    .content-wrapper {
+        background-color: $black-bg;
+        padding: 5rem 0 19rem;
+
+        @media (max-width: $lg) {
+            padding: 3rem 0 19rem;
+        }
+    }
 
     .container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        position: relative;
     }
 
     .content {
@@ -27,11 +33,10 @@
 
     .flex-cards {
         display: flex;
-        margin: 5rem 1rem 0;
-        position: absolute;
-        top: 100%;
+        margin: 0 1rem;
         overflow: hidden;
         border-radius: 1rem;
+        position: relative;
 
         @media (max-width: $lg) {
             flex-direction: column;
@@ -100,6 +105,14 @@
             @media (max-width: $lg) {
                 margin-bottom: .5rem;
             }
+        }
+    }
+
+    .card-wrapper {
+        margin-top: -13rem;
+
+        @media (max-width: $lg) {
+            margin-top: -16rem;
         }
     }
 }

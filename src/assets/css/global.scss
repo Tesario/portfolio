@@ -21,7 +21,7 @@ $button-size: 1.2em;
 $main-font: "Montserrat";
 
 // Line Height
-$line-height: 1.4em;
+$line-height: 1.5em;
 
 // Breakpoints
 $xs: 0;
@@ -60,6 +60,10 @@ body {
     font-weight: 300;
     line-height: $line-height;
     letter-spacing: .1px;
+
+    @media (max-width: $lg) {
+        font-size: 16px;
+    }
 
     main {
         flex: 1;
@@ -118,11 +122,11 @@ textarea {
     margin-bottom: 1rem;
 
     @media (max-width: $lg) {
-        font-size: 2.5em;
+        font-size: 3em;
     }
 
     @media (max-width: $sm) {
-        font-size: 1.8em;
+        font-size: 2em;
     }
 }
 
@@ -136,7 +140,7 @@ textarea {
     }
 
     @media (max-width: $sm) {
-        font-size: 1.5em;
+        font-size: 1.6em;
     }
 }
 
@@ -146,11 +150,11 @@ textarea {
     margin-bottom: 1.5rem;
 
     @media (max-width: $lg) {
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 
     @media (max-width: $sm) {
-        font-size: 1.1em;
+        font-size: 1.3em;
     }
 }
 
