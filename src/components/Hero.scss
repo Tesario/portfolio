@@ -54,19 +54,23 @@
         @include pseudo-elem;
         top: unset;
         bottom: 0;
-        height: 50px;
         max-width: 100%;
-
-        @media (max-width: $lg) {
-            height: 30px;
-        }
+        height: auto;
 
         .gatsby-image-wrapper {
             height: 100%;
         }
 
         img {
-            object-fit: fill !important;
+            object-fit: contain !important;
+        }
+
+        &::after {
+            @include pseudo-elem;
+            background-color: $black-bg;
+            bottom: 0;
+            top: unset;
+            height: 1px;
         }
     }
 }
