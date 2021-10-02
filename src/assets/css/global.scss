@@ -195,14 +195,34 @@ section {
 }
 
 #not-found {
-    width: 100%;
+    position: relative;
+    flex: 1;
     display: flex;
-    justify-content: center;
     align-items: center;
+    color: $white;
 
     .content {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .bg-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        .gatsby-image-wrapper {
+            position: unset !important;
+            height: 100%;
+        }
+
+        &::after {
+            @include pseudo-elem;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 42%, rgba(0, 0, 0, 0.85) 60%, rgba(0, 0, 0, 0.1) 100%);
+        }
     }
 }

@@ -3,7 +3,7 @@ import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby-plugin-react-i18next";
 import Image from "gatsby-image";
-import "./layout.scss";
+import "./Layout.scss";
 
 const Layout = (props) => {
   const { children, lang } = props;
