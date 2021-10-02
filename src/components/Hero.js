@@ -17,6 +17,16 @@ const Hero = () => {
   useEffect(() => {
     if (window !== undefined) {
       setWidth(window.innerWidth);
+
+      const content = document.querySelector(".content");
+      const bgImage = document.querySelector(".bg-image");
+
+      window.addEventListener("scroll", () => {
+        content.style.top = window.scrollY * 0.05 + "%";
+        content.style.opacity = 1 - window.scrollY / 350;
+        bgImage.style.setProperty("--scroll-y", window.scrollY * -0.05 + "%");
+        bgImage.style.setProperty("--opacity", 1 - window.scrollY / 600);
+      });
     }
   }, []);
 

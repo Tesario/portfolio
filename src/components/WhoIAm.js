@@ -1,8 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
 import "./WhoIAm.scss";
 
-const WhoIAm = () => {
+const WhoIAm = ({ desc }) => {
   const { t } = useTranslation();
 
   return (
@@ -10,12 +11,7 @@ const WhoIAm = () => {
       <div className="container">
         <div className="content">
           <h2 className="title-2">{t("whoIAm?")}</h2>
-          <p>
-            Jmenuji se Vojtěch Tesař a vše pro mě začlo od roku 2021, kdy jsem
-            si vývoj webů zamiloval. Už na začátku mé cesty mě bavilo poznávat a
-            hledat funkční řešení. Zdokonaloval jsem se a získal jsem spoustu
-            zkušeností.
-          </p>
+          {renderRichText(desc)}
         </div>
       </div>
     </section>

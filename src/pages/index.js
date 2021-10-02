@@ -9,6 +9,9 @@ import "../assets/css/global.scss";
 const Index = (props) => {
   const {
     pageContext: { language },
+    data: {
+      whoIAm: { nodes },
+    },
   } = props;
 
   return (
@@ -17,7 +20,7 @@ const Index = (props) => {
       <Layout lang={language}>
         <main>
           <Hero />
-          <WhoIAm />
+          <WhoIAm desc={nodes[0].text} />
         </main>
       </Layout>
     </>
@@ -32,6 +35,15 @@ export const data = graphql`
           ns
           data
           language
+        }
+      }
+    }
+    whoIAm: allContentfulDescriptions(
+      filter: { title: { eq: "Kdo jsem?" }, node_locale: { eq: $language } }
+    ) {
+      nodes {
+        text {
+          raw
         }
       }
     }
