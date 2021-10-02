@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import Image from "gatsby-image";
 import "./Hero.scss";
 
 const Hero = () => {
+  const windowWidth = useWindowSize().width;
   const {
     contentfulHeroSection: {
       motto,
@@ -19,7 +20,7 @@ const Hero = () => {
         <Image fluid={fluid} alt="Background" />
       </div>
       <div className="curve">
-        {window.innerWidth > 768 ? (
+        {windowWidth > 768 ? (
           <Image fluid={nodes[1].fluid} alt="Background" />
         ) : (
           <Image fluid={nodes[0].fluid} alt="Background" />
@@ -61,5 +62,24 @@ const query = graphql`
     }
   }
 `;
+
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return windowSize;
+};
 
 export default Hero;
