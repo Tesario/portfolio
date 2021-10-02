@@ -61,7 +61,7 @@ const query = graphql`
       }
     ) {
       nodes {
-        fluid(maxWidth: 768) {
+        fluid(maxWidth: 360) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
