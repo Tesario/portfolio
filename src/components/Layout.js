@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useTranslation } from "gatsby-plugin-react-i18next";
+import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby-plugin-react-i18next";
 import Image from "gatsby-image";
@@ -10,18 +10,10 @@ const Layout = (props) => {
   const darkOverlayRef = useRef("");
   const hamburgerRef = useRef("");
   const { t } = useTranslation();
-
-  const data = useStaticQuery(graphql`
-    {
-      allImageSharp(filter: { fluid: { originalName: { eq: "icon.png" } } }) {
-        nodes {
-          fluid(maxWidth: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
+  const { originalPath } = useI18next();
+  const {
+    allImageSharp: { nodes },
+  } = useStaticQuery(query);
 
   const toggleMenu = (e, alwaysClose = false) => {
     e.preventDefault();
@@ -68,7 +60,7 @@ const Layout = (props) => {
               scrollToSection("#hero", e);
             }}
           >
-            <Image fluid={data.allImageSharp.nodes[0].fluid} alt="Icon" />
+            <Image fluid={nodes[0].fluid} alt="Icon" />
           </a>
           <div className="menu-wrapper" ref={menuRef}>
             <ul className="menu">
@@ -102,7 +94,7 @@ const Layout = (props) => {
                     toggleMenu(e);
                   }}
                 >
-                  {t("whatICreated")}
+                  {t("whatDidICreate")}
                 </a>
               </li>
               <li>
@@ -118,11 +110,11 @@ const Layout = (props) => {
               </li>
               <li>
                 {lang === "cs" ? (
-                  <Link className="lang" to="/" language="en">
+                  <Link className="lang" to={originalPath} language="en">
                     EN
                   </Link>
                 ) : (
-                  <Link className="lang" to="/" language="cs">
+                  <Link className="lang" to={originalPath} language="cs">
                     CZ
                   </Link>
                 )}
@@ -185,5 +177,17 @@ const Layout = (props) => {
     </>
   );
 };
+
+const query = graphql`
+  {
+    allImageSharp(filter: { fluid: { originalName: { eq: "icon.png" } } }) {
+      nodes {
+        fluid(maxWidth: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
 
 export default Layout;

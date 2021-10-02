@@ -1,17 +1,28 @@
 import React from "react";
+import { Link, graphql } from "gatsby";
 import Seo from "../components/Seo";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 import Layout from "../components/Layout";
-import { Link } from "gatsby";
 
 const NotFoundPage = (props) => {
+  const { t } = useTranslation();
+  const {
+    pageContext: { language },
+  } = props;
+
   return (
     <>
-      <Seo lang={props.pageContext.language} />
-      <Layout lang={props.pageContext.language}>
+      <Seo lang={language} />
+      <Layout lang={language}>
         <main>
-          <section id="hero">
+          <section id="not-found">
             <div className="container">
-              <h1 className="title">Full-stack developer</h1>
+              <div className="content">
+                <h1 className="title-2">{t("404")}</h1>
+                <Link to="/" className="btn btn-primary">
+                  {t("backToHome")}
+                </Link>
+              </div>
             </div>
           </section>
         </main>
@@ -19,5 +30,19 @@ const NotFoundPage = (props) => {
     </>
   );
 };
+
+export const data = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
 
 export default NotFoundPage;

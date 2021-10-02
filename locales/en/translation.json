@@ -2,9 +2,11 @@
   {
     "whoIAm": "Who I am",
     "whoIAm?": "Who I am?",
-    "whatCanIDo": "What I can do",
-    "whatCanIDo?": "What I can do?",
-    "whatICreated": "What I created",
-    "whatICreated?": "What I created?",
-    "contact":"Contact"
+    "whatCanIDo": "What can I do",
+    "whatCanIDo?": "What can I do?",
+    "whatDidICreate": "What did I create",
+    "whatICreated?": "What did I create?",
+    "contact":"Contact",
+    "404":"Page not found",
+    "backToHome":"Back to website"
   }

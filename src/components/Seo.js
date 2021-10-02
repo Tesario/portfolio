@@ -45,20 +45,36 @@ const Seo = (props) => {
           content: metaTitle,
         },
         {
-          property: "og:url",
-          content: metaUrl,
-        },
-        {
-          property: "og:image",
-          content: metaImage,
-        },
-        {
           property: "og:description",
           content: metaDescription,
         },
         {
           property: "og:type",
           content: "website",
+        },
+        {
+          name: `twitter:creator`,
+          content: metaAuthor,
+        },
+        {
+          name: `twitter:title`,
+          content: metaTitle,
+        },
+        {
+          name: "twitter:card",
+          content: "summary",
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+        {
+          property: "og:url",
+          content: metaUrl,
+        },
+        {
+          property: "og:image",
+          content: metaImage,
         },
         {
           name: "theme-color",

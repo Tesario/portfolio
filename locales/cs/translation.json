@@ -4,7 +4,9 @@
     "whoIAm?": "Kdo jsem?",
     "whatCanIDo": "Co umím",
     "whatCanIDo?": "Co umím?",
-    "whatICreated": "Co jsem vytvořil",
-    "whatICreated?": "Co jsem vytvořil?",
-    "contact":"Kontakt"
+    "whatDidICreate": "Co jsem vytvořil",
+    "whatDidICreate?": "Co jsem vytvořil?",
+    "contact":"Kontakt",
+    "404":"Stránka nenalezena",
+    "backToHome":"Zpět na web"
   }
