@@ -38,6 +38,7 @@ const Hero = () => {
       <div className="bg-image">
         <Image fluid={fluid} alt="Background" />
       </div>
+      <span className="bg-linear"></span>
       <div className="curve">
         {width > 768 ? (
           <Image fluid={nodes[1].fluid} alt="Background" />
