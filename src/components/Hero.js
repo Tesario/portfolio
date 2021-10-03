@@ -16,12 +16,12 @@ const Hero = () => {
 
   const scrollEffect = () => {
     const content = document.querySelector(".content");
-    const bgImage = document.querySelector(".bg-image");
+    const bgLinear = document.querySelector(".bg-linear");
 
     content.style.top = window.scrollY * 0.06 + "%";
     content.style.opacity = 1 - window.scrollY / 500;
-    bgImage.style.setProperty("--scroll-y", window.scrollY * 0.05 + "%");
-    bgImage.style.setProperty("--opacity", 1 - window.scrollY / 700);
+    bgLinear.style.setProperty("--scroll-y", window.scrollY * 0.05 + "%");
+    bgLinear.style.setProperty("--opacity", 1 - window.scrollY / 700);
   };
 
   useEffect(() => {
