@@ -21,7 +21,7 @@ module.exports = {
         fonts: [
           {
             family: "Montserrat",
-            weights: ["300", "600"],
+            weights: ["300", "400", "600"],
           },
         ],
       },

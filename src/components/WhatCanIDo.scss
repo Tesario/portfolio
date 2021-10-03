@@ -1,0 +1,48 @@
+@import "../assets/css/global.scss";
+
+#what-can-i-do {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .graph {
+        max-width: 600px;
+
+        @media (max-width: $md) {
+            grid-column: 1/3;
+            order: -1;
+        }
+    }
+
+    .grid-tech {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        place-items: flex-start center;
+
+        @media (max-width: $md) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem 1rem;
+        }
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tech {
+        width: fit-content;
+
+        &:not(:first-child) {
+            margin-top: 1rem;
+        }
+
+        .title-3 {
+            margin-bottom: .3rem;
+            font-weight: 400;
+        }
+    }
+}

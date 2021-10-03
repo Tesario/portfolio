@@ -80,7 +80,7 @@ const Layout = (props) => {
                 <a
                   href="/#"
                   onClick={(e) => {
-                    scrollToSection("#features", e);
+                    scrollToSection("#what-can-i-do", e);
                     toggleMenu(e);
                   }}
                 >
@@ -91,7 +91,7 @@ const Layout = (props) => {
                 <a
                   href="/#"
                   onClick={(e) => {
-                    scrollToSection("#development", e);
+                    scrollToSection("#what-did-i-create", e);
                     toggleMenu(e);
                   }}
                 >
@@ -102,7 +102,7 @@ const Layout = (props) => {
                 <a
                   href="/#"
                   onClick={(e) => {
-                    scrollToSection("#technology", e);
+                    scrollToSection("#contact", e);
                     toggleMenu(e);
                   }}
                 >
