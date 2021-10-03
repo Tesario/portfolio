@@ -46,9 +46,9 @@
     .content {
         display: flex;
         flex-direction: column;
-        align-items: center;
         position: relative;
         opacity: 1;
+        width: 100%;
 
         .title,
         .title-2,

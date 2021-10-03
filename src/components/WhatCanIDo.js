@@ -8,7 +8,7 @@ const WhatCanIDo = ({ technologies }) => {
 
   useEffect(() => {
     const ctx = document.getElementById("myChart");
-    const chart = new Chart(ctx, {
+    new Chart(ctx, {
       type: "doughnut",
       data: {
         labels: [technologies.map((technology) => technology.title)][0],
