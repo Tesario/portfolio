@@ -21,9 +21,9 @@ const WhoIAm = ({ desc, infoCards }) => {
             {infoCards.map((card, index) => {
               return (
                 <div key={index} className="card">
-                  {/* <div className="icon">
+                  <div className="icon">
                     <img src={card.icon.file.url} alt={card.title} />
-                  </div> */}
+                  </div>
                   <div className="title-3">{card.title}</div>
                   <div className="desc">{renderRichText(card.description)}</div>
                 </div>
