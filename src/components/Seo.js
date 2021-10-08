@@ -92,10 +92,6 @@ const Seo = (props) => {
           name: "google-site-verification",
           content: "Xvc_bLyCKhp7sGsVcjA4aPMHKb4fR5XLWrNjqH24Yds",
         },
-        {
-          name: "robots",
-          content: "noindex",
-        },
       ].concat(
         metaKeywords && metaKeywords.length > 0
           ? {
