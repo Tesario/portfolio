@@ -8,6 +8,7 @@
     padding-top: calc(60px + 1rem);
     box-sizing: border-box;
     position: relative;
+    overflow: hidden;
 
     @media (max-width: $lg) {
         padding-top: calc(60px + .5rem);
@@ -33,6 +34,7 @@
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.75) 25%, rgba(0, 0, 0, 0.83) 32%, rgba(0, 0, 0, 0.83) 67%, rgba(0, 0, 0, 0.75) 74%, rgba(0, 0, 0, 0.1) 100%);
         top: var(--scroll-y);
         opacity: var(--opacity);
+        z-index: -1;
     }
 
     .container {

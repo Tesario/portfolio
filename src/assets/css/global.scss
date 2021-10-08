@@ -9,6 +9,7 @@ $grey: #a8b2d1;
 $blue: #18a0fb;
 $border-grey: #555555;
 $card-bg: #3c3e50;
+$card-text:#a8b2d1;
 
 // Font Sizes
 $title-size: 4.5em;
@@ -168,7 +169,7 @@ h6 {
 }
 
 section {
-    padding: 3rem 0;
+    padding: 5rem 0;
 
     @media (max-width: $lg) {
         padding: 1.5rem 0;

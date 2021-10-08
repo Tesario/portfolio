@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
 import Chart from "chart.js/auto";
 import "./WhatCanIDo.scss";
 
-const WhatCanIDo = ({ technologies }) => {
+const WhatCanIDo = ({ desc, technologies }) => {
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -42,7 +43,10 @@ const WhatCanIDo = ({ technologies }) => {
   return (
     <section id="what-can-i-do">
       <div className="container">
-        <h2 className="title-2">{t("whatCanIDo?")}</h2>
+        <div className="content">
+          <h2 className="title-2">{t("whatCanIDo?")}</h2>
+          {renderRichText(desc)}
+        </div>
         <div className="grid-tech">
           <div className="column">
             {technologies.slice(0, 2).map((technology) => {
