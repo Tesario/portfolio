@@ -15,17 +15,6 @@ module.exports = {
         spaceId: "21wj6gzely1i",
       },
     },
-    {
-      resolve: `gatsby-plugin-google-fonts-v2`,
-      options: {
-        fonts: [
-          {
-            family: "Montserrat",
-            weights: ["300", "400", "600"],
-          },
-        ],
-      },
-    },
     "gatsby-plugin-sass",
     "gatsby-image",
     {

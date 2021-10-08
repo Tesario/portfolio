@@ -21,6 +21,11 @@ $button-size: 1.2em;
 // Font Families
 $main-font: "Montserrat";
 
+@font-face {
+    font-family: "Montserrat";
+    src: url('/fonts/montserrat-light.woff')format('woff'),
+}
+
 // Line Height
 $line-height: 1.5em;
 
