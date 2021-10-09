@@ -19,12 +19,12 @@ $menu-size: 1em;
 $button-size: 1.2em;
 
 // Font Families
-$main-font: "Montserrat";
+$primary-font: "Roboto";
 
 @font-face {
-    font-family: "Montserrat";
+    font-family: $primary-font;
     font-display: swap;
-    src: url('/fonts/montserrat-light.woff2')format('woff2'),
+    src: url('/fonts/roboto-light.woff2')format('woff2'),
 }
 
 // Line Height
@@ -62,7 +62,7 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $primary-font, sans-serif;
     font-size: 18px;
     font-weight: 300;
     line-height: $line-height;
@@ -126,7 +126,7 @@ textarea {
 
 .title {
     font-size: $title-size;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 
     @media (max-width: $lg) {
         font-size: 3em;
@@ -140,7 +140,7 @@ textarea {
 .title-2 {
     font-size: $title-2-size;
     line-height: $line-height;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 
     @media (max-width: $lg) {
         font-size: 2em;
@@ -154,7 +154,7 @@ textarea {
 .title-3 {
     font-size: $title-3-size;
     line-height: $line-height;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 
     @media (max-width: $lg) {
         font-size: 1.3em;
