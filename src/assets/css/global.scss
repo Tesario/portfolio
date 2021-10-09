@@ -19,12 +19,12 @@ $menu-size: 1em;
 $button-size: 1.2em;
 
 // Font Families
-$primary-font: "Roboto";
+$primary-font: "Futura LT";
 
 @font-face {
     font-family: $primary-font;
     font-display: swap;
-    src: url('/fonts/roboto-light.woff2')format('woff2'),
+    src: url('/fonts/opensans-regular.woff2')format('woff2'),
 }
 
 // Line Height
