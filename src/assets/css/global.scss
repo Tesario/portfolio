@@ -10,6 +10,9 @@ $blue: #18a0fb;
 $border-grey: #555555;
 $card-bg: #3c3e50;
 $card-text:#a8b2d1;
+$contact-text: #c4c4c4;
+$red: #dc3545;
+$green: #198754;
 
 // Font Sizes
 $title-size: 4.5em;
@@ -102,13 +105,27 @@ a,
 input,
 textarea {
     box-sizing: border-box;
+    font-family: $primary-font;
+    outline: none;
+}
+
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 80px white inset !important;
 }
 
 .btn {
     border: 0;
+    outline: none;
     font-size: $button-size;
     padding: .5rem 1rem;
-    border-radius: .4rem;
+    border-radius: .2rem;
 }
 
 .btn-primary {
@@ -117,6 +134,7 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .1s ease-in-out;
 
     &:focus,
     &:hover {

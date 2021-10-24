@@ -3,16 +3,17 @@ import { graphql } from "gatsby";
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
-import WhoIAm from "../components/WhoIAm";
+import WhoAmI from "../components/WhoAmI";
 import WhatCanIDo from "../components/WhatCanIDo";
 import WhatDidICreate from "../components/WhatDidICreate";
+import Contact from "../components/Contact";
 import "../assets/css/global.scss";
 
 const Index = (props) => {
   const {
     pageContext: { language },
     data: {
-      whoIAm,
+      whoAmI,
       whatCanIDo,
       whatDidICreate,
       infoCards,
@@ -27,7 +28,7 @@ const Index = (props) => {
       <Layout lang={language}>
         <main>
           <Hero />
-          <WhoIAm desc={whoIAm.text} infoCards={infoCards.nodes} />
+          <WhoAmI desc={whoAmI.text} infoCards={infoCards.nodes} />
           <WhatCanIDo
             desc={whatCanIDo.text}
             technologies={technologies.nodes}
@@ -36,6 +37,7 @@ const Index = (props) => {
             desc={whatDidICreate.text}
             projects={projects.nodes}
           />
+          <Contact />
         </main>
       </Layout>
     </>
@@ -53,7 +55,7 @@ export const data = graphql`
         }
       }
     }
-    whoIAm: contentfulDescriptions(
+    whoAmI: contentfulDescriptions(
       title: { eq: "Kdo jsem?" }
       node_locale: { eq: $language }
     ) {

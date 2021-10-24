@@ -1,16 +1,16 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
-import "./WhoIAm.scss";
+import "./WhoAmI.scss";
 
-const WhoIAm = ({ desc, infoCards }) => {
+const WhoAmI = ({ desc, infoCards }) => {
   const { t } = useTranslation();
   return (
     <section id="who-i-am">
       <div className="content-wrapper">
         <div className="container">
           <div className="content">
-            <h2 className="title-2">{t("whoIAm?")}</h2>
+            <h2 className="title-2">{t("whoAmI?")}</h2>
             {renderRichText(desc)}
           </div>
         </div>
@@ -36,4 +36,4 @@ const WhoIAm = ({ desc, infoCards }) => {
   );
 };
 
-export default WhoIAm;
+export default WhoAmI;

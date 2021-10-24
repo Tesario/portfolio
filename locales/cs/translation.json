@@ -1,12 +1,17 @@
 
   {
-    "whoIAm": "Kdo jsem",
-    "whoIAm?": "Kdo jsem?",
+    "whoAmI": "Kdo jsem",
+    "whoAmI?": "Kdo jsem?",
     "whatCanIDo": "Co umím",
     "whatCanIDo?": "Co umím?",
     "whatDidICreate": "Co jsem vytvořil",
     "whatDidICreate?": "Co jsem vytvořil?",
     "contact":"Kontakt",
     "404":"Stránka nenalezena",
-    "backToHome":"Zpět na web"
+    "backToHome":"Zpět na web",
+    "name": "Jméno",
+    "message": "Zpráva",
+    "send": "Odeslat",
+    "czech": "Čeština",
+    "english": "Angličtina"
   }

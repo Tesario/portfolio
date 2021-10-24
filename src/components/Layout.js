@@ -73,7 +73,7 @@ const Layout = (props) => {
                     toggleMenu(e);
                   }}
                 >
-                  {t("whoIAm")}
+                  {t("whoAmI")}
                 </a>
               </li>
               <li>

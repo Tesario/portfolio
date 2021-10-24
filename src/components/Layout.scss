@@ -160,6 +160,11 @@
         a {
             color: $white;
             font-size: $menu-size;
+            transition: .2s ease-in-out;
+
+            &:hover {
+                filter: brightness(.9);
+            }
         }
 
         .lang {

@@ -2,21 +2,17 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faExternalLinkAlt,
-  faEye,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import Image from "gatsby-image";
 import "./WhatDidICreate.scss";
 
 const WhatDidICreate = ({ desc, projects }) => {
   const { t } = useTranslation();
 
-  const toggleProject = (e, image) => {
-    e.preventDefault();
-    document.querySelector(image).classList.toggle("show");
-  };
+  // const toggleProject = (e, image) => {
+  //   e.preventDefault();
+  //   document.querySelector(image).classList.toggle("show");
+  // };
 
   return (
     <section id="what-did-i-create">

@@ -1,12 +1,17 @@
 
   {
-    "whoIAm": "Who I am",
-    "whoIAm?": "Who I am?",
+    "whoAmI": "Who am I",
+    "whoAmI?": "Who am I?",
     "whatCanIDo": "What can I do",
     "whatCanIDo?": "What can I do?",
     "whatDidICreate": "What did I create",
     "whatDidICreate?": "What did I create?",
-    "contact":"Contact",
-    "404":"Page not found",
-    "backToHome":"Back to website"
+    "contact": "Contact",
+    "404": "Page not found",
+    "backToHome": "Back to website",
+    "name": "Name",
+    "message": "Message",
+    "send": "Send",
+    "czech": "Czech",
+    "english": "English"
   }
