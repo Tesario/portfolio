@@ -19,6 +19,8 @@ const Index = (props) => {
       infoCards,
       technologies,
       projects,
+      cv,
+      languages,
     },
   } = props;
 
@@ -37,7 +39,7 @@ const Index = (props) => {
             desc={whatDidICreate.text}
             projects={projects.nodes}
           />
-          <Contact />
+          <Contact cv={cv.file} languages={languages.nodes} />
         </main>
       </Layout>
     </>
@@ -127,6 +129,22 @@ export const data = graphql`
             ...GatsbyContentfulFluid
           }
         }
+      }
+    }
+    cv: contentfulFiles(name: { eq: "CV" }, node_locale: { eq: $language }) {
+      file {
+        file {
+          url
+        }
+      }
+    }
+    languages: allContentfulLanguages(
+      filter: { node_locale: { eq: $language } }
+    ) {
+      nodes {
+        language
+        level
+        percentages
       }
     }
   }

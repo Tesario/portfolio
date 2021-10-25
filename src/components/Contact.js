@@ -6,7 +6,7 @@ import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./Contact.scss";
 
-const Contact = () => {
+const Contact = ({ cv, languages }) => {
   const [state, handleSubmit] = useForm("xayazlka", {
     data: {
       _subject: "Zpráva z portfólia",
@@ -115,7 +115,12 @@ const Contact = () => {
           <div className="card card-about">
             <div className="name">Vojtěch Tesař</div>
             <div className="job">Full-stack developer</div>
-            <a href="/#" className="link">
+            <a
+              href={cv.file.url}
+              target="_blank"
+              rel="noreferrer"
+              className="link"
+            >
               <FontAwesomeIcon icon={faDownload} />
               CV
             </a>
@@ -130,18 +135,19 @@ const Contact = () => {
             </a>
           </div>
           <div className="card card-skills">
-            <div className="lang-group">
-              <div className="desc">{t("czech")}</div>
-              <div className="lang cs">
-                <div className="value">C2</div>
-              </div>
-            </div>
-            <div className="lang-group">
-              <div className="desc">{t("english")}</div>
-              <div className="lang en">
-                <div className="value">B1</div>
-              </div>
-            </div>
+            {languages.map(({ language, level, percentages }, index) => {
+              return (
+                <div className="lang-group" key={index}>
+                  <div className="desc">{language}</div>
+                  <div
+                    className="lang"
+                    style={{ "--value": percentages + "%" }}
+                  >
+                    <div className="value">{level}</div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
