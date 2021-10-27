@@ -13,21 +13,6 @@
         box-sizing: border-box;
     }
 
-    &.scrolling {
-        @media (min-width: $lg) {
-            background-color: var(--secondary-color);
-
-            .menu-wrapper {
-                padding: 1rem 0;
-            }
-        }
-    }
-
-    @media (max-width: $lg) {
-        background-color: var(--secondary-color);
-        border-bottom: 1px solid var(--primary-color);
-    }
-
     .hamburger {
         cursor: pointer;
         display: flex;

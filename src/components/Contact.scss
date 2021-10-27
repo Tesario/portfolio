@@ -82,7 +82,13 @@
 
         .btn {
             font-size: 18px;
+            background-color: $contact-btn;
             width: 180px;
+
+            &:focus,
+            &:hover {
+                background-color: darken($contact-btn, 5%);
+            }
         }
     }
 
@@ -162,7 +168,7 @@
             cursor: text;
 
             &.focused {
-                color: $blue;
+                color: $contact-btn;
                 top: -15px;
                 background-color: $white;
             }

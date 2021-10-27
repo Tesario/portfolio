@@ -77,7 +77,7 @@ const Contact = ({ cv, languages }) => {
                   onChange={(e) => inputFocused(e)}
                   onBlur={(e) => inputFocused(e, true)}
                   type="text"
-                  id="name"
+                  id="Name"
                   name="Name"
                 />
               </div>
@@ -88,7 +88,7 @@ const Contact = ({ cv, languages }) => {
                   onChange={(e) => inputFocused(e)}
                   onBlur={(e) => inputFocused(e, true)}
                   type="text"
-                  id="email"
+                  id="E-mail"
                   name="E-mail"
                 />
               </div>
@@ -98,7 +98,7 @@ const Contact = ({ cv, languages }) => {
                   onFocus={(e) => inputFocused(e)}
                   onChange={(e) => inputFocused(e)}
                   onBlur={(e) => inputFocused(e, true)}
-                  id="message"
+                  id="Message"
                   name="Message"
                 ></textarea>
               </div>
