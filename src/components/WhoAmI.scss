@@ -5,11 +5,12 @@
     padding: 0 0 1rem;
 
     .content-wrapper {
+        position: relative;
         background-color: $black-bg;
-        padding: 5rem 0 19rem;
+        padding: 4rem 0 19rem;
 
         @media (max-width: $lg) {
-            padding: 3rem 0 19rem;
+            padding: 1rem 0 19rem;
         }
     }
 
@@ -114,7 +115,7 @@
     }
 
     .card-wrapper {
-        margin-top: -13rem;
+        margin: -13rem auto 0;
 
         @media (max-width: $lg) {
             margin-top: -16rem;

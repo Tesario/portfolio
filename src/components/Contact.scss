@@ -1,7 +1,6 @@
 @import "../assets/css/global.scss";
 
 #contact {
-
     @media (max-width: $lg) {
         padding-bottom: 2rem;
     }
@@ -13,12 +12,20 @@
     }
 
     .content {
-        margin-bottom: .5rem;
+        @media (min-width: $lg) {
+            margin-bottom: 1rem;
+        }
+
+        .title-2 {
+            @media (max-width: $sm) {
+                margin: 0;
+            }
+        }
     }
 
     .card-grid {
         display: grid;
-        grid-template-columns: 500px 250px 0;
+        grid-template-columns: 500px 270px 0;
         place-items: flex-end;
         margin: 0 0 2rem 0;
 
@@ -30,9 +37,13 @@
         }
 
         @media (max-width: $sm) {
-            grid-template-columns: 1fr;
             width: 100%;
-            place-items: center;
+            gap: 0;
+            place-items: unset;
+        }
+
+        @media (max-width: 415px) {
+            grid-template-columns: 1fr;
         }
     }
 
@@ -40,6 +51,10 @@
         box-shadow: 0 10px 45px -13px rgba(0, 0, 0, 0.25);
         border-radius: .3rem;
         background-color: $white;
+
+        @media (max-width: $sm) {
+            box-shadow: none;
+        }
     }
 
     .card-form {
@@ -57,8 +72,12 @@
         }
 
         @media (max-width: $sm) {
-            grid-column: 1/2;
-            padding: 1.5rem;
+            padding: 1.5rem 0;
+            border-radius: .3rem .3rem 0 0;
+        }
+
+        @media (max-width: 415px) {
+            grid-column: unset;
         }
 
         .btn {
@@ -182,6 +201,22 @@
             padding: 1.5rem;
         }
 
+        @media (max-width: $sm) {
+            justify-content: center;
+            padding: 0;
+        }
+
+        @media (max-width: 415px) {
+            margin-top: 1rem;
+        }
+
+        .job,
+        .name {
+            @media (max-width: $sm) {
+                display: none;
+            }
+        }
+
         .name {
             font-size: 1.4em;
             margin-bottom: .75rem;
@@ -223,6 +258,7 @@
         display: flex;
         align-items: flex-end;
         flex-direction: column;
+        padding: 1.5rem 3.5rem 1.5rem .5rem;
 
         @media (max-width: $lg) {
             position: relative;
@@ -230,12 +266,17 @@
             height: auto;
             width: auto;
             margin: 0;
-            padding: 2rem;
+            padding: 1.5rem;
+            flex-direction: row;
         }
 
+        @media (max-width: $sm) {
+            padding: 0;
+            justify-content: center;
+        }
 
-        @media (max-width: $lg) {
-            padding: 1.5rem;
+        @media (max-width: 415px) {
+            margin-top: 2rem;
         }
 
         .lang-group {
@@ -245,6 +286,10 @@
 
             &:first-child {
                 margin-bottom: 1rem;
+
+                @media (max-width: $lg) {
+                    margin: 0 1.5rem 0 0;
+                }
             }
         }
 

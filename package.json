@@ -22,6 +22,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
     "chart.js": "^3.5.1",
+    "dotenv": "^10.0.0",
     "gatsby": "^3.13.1",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-image": "^1.14.0",

@@ -1,6 +1,8 @@
 @import "../assets/css/global.scss";
 
 #what-can-i-do {
+    position: relative;
+
     .container {
         display: flex;
         flex-direction: column;
@@ -33,7 +35,6 @@
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
-        place-items: flex-start center;
 
         @media (max-width: $md) {
             grid-template-columns: repeat(2, 1fr);
@@ -47,10 +48,14 @@
         height: 100%;
         justify-content: space-evenly;
         flex-direction: column;
+
+        &:last-child {
+            align-items: flex-end;
+        }
     }
 
     .tech {
-        width: fit-content;
+        width: 131px;
 
         &:not(:first-child) {
             margin-top: 1rem;

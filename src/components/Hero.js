@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import Image from "gatsby-image";
 import "./Hero.scss";
 
 const Hero = () => {
-  const [width, setWidth] = useState("");
   const {
     contentfulHeroSection: {
       motto,
       background: { fluid },
     },
-    allImageSharp: { nodes },
   } = useStaticQuery(query);
 
   const scrollEffect = () => {
@@ -26,8 +24,6 @@ const Hero = () => {
 
   useEffect(() => {
     if (window !== undefined) {
-      setWidth(window.innerWidth);
-
       scrollEffect();
       window.addEventListener("scroll", scrollEffect);
     }
@@ -39,13 +35,7 @@ const Hero = () => {
         <Image fluid={fluid} alt="Background" />
       </div>
       <span className="bg-linear"></span>
-      <div className="curve">
-        {width > 768 ? (
-          <Image fluid={nodes[1].fluid} alt="Background" />
-        ) : (
-          <Image fluid={nodes[0].fluid} alt="Background" />
-        )}
-      </div>
+      <span className="polygon"></span>
       <div className="container">
         <div className="content">
           <h1 className="title">Full-stack developer</h1>
@@ -66,17 +56,6 @@ const query = graphql`
       background {
         fluid {
           ...GatsbyContentfulFluid
-        }
-      }
-    }
-    allImageSharp(
-      filter: {
-        fluid: { originalName: { in: ["bg-curve.png", "bg-curve-mobile.png"] } }
-      }
-    ) {
-      nodes {
-        fluid(maxWidth: 1920) {
-          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }

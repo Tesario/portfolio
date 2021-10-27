@@ -22,12 +22,12 @@ $menu-size: 1em;
 $button-size: 1.2em;
 
 // Font Families
-$primary-font: "Open Sans";
+$primary-font: "Montserrat";
 
 @font-face {
     font-family: $primary-font;
     font-display: swap;
-    src: url('/fonts/opensans-regular.woff2')format('woff2'),
+    src: url('/fonts/montserrat-regular.woff2')format('woff2'),
 }
 
 // Line Height
@@ -193,10 +193,10 @@ h6 {
 }
 
 section {
-    padding: 5rem 0;
+    padding: 2.5rem 0 6.5rem;
 
     @media (max-width: $lg) {
-        padding: 1.5rem 0;
+        padding: 1.5rem 0 4rem;
     }
 }
 
@@ -225,7 +225,7 @@ section {
     }
 
     @media (min-width: 1400px) {
-        max-width: 1320px;
+        max-width: 1200px;
     }
 }
 
@@ -259,5 +259,27 @@ section {
             @include pseudo-elem;
             background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 42%, rgba(0, 0, 0, 0.85) 60%, rgba(0, 0, 0, 0.1) 100%);
         }
+    }
+}
+
+.polygon {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    clip-path: polygon(60% 70%, 89% 91%, 100% 67%, 100% 100%, 0 100%, 0% 60%, 22% 93%);
+    background-color: $black-bg;
+
+    @media (max-width: 1700px) {
+        clip-path: polygon(46% 72%, 80% 85%, 100% 68%, 100% 100%, 0 100%, 0 74%, 19% 88%);
+    }
+
+    @media (max-width: $md) {
+        clip-path: polygon(68% 71%, 100% 76%, 100% 100%, 0 100%, 0 76%, 24% 80%);
+    }
+
+    &.reverse {
+        background-color: $white;
     }
 }

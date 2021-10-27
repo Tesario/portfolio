@@ -7,7 +7,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./Contact.scss";
 
 const Contact = ({ cv, languages }) => {
-  const [state, handleSubmit] = useForm("xayazlka", {
+  const [state, handleSubmit] = useForm(process.env.GATSBY_FORMSPREE_KEY, {
     data: {
       _subject: "Zpráva z portfólia",
     },

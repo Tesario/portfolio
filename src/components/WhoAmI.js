@@ -14,6 +14,7 @@ const WhoAmI = ({ desc, infoCards }) => {
             {renderRichText(desc)}
           </div>
         </div>
+        <span className="polygon reverse"></span>
       </div>
       <div className="card-wrapper">
         <div className="container">

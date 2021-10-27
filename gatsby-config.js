@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: ".env",
+});
+
 module.exports = {
   siteMetadata: {
     title: "Vojtěch Tesař",
@@ -11,7 +15,7 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: "15rzbJT0iZ0v7R2pbP32-Lry4YTOFQTVkeBHuGl-OXA",
+        accessToken: process.env.ACCESS_TOKEN,
         spaceId: "21wj6gzely1i",
       },
     },
@@ -66,7 +70,6 @@ module.exports = {
         },
       },
     },
-
     "gatsby-plugin-offline",
   ],
 };

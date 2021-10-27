@@ -4,7 +4,7 @@
     color: $white;
     flex: 1;
     display: flex;
-    min-height: 100vh;
+    min-height: calc(100vh + 40px);
     padding-top: calc(60px + 1rem);
     box-sizing: border-box;
     position: relative;
@@ -59,34 +59,6 @@
         .title-3 {
             @media (max-width: $sm) {
                 font-size: .95em;
-            }
-        }
-    }
-
-    .curve {
-        @include pseudo-elem;
-        top: unset;
-        bottom: 0;
-        max-width: 100%;
-        height: auto;
-
-        .gatsby-image-wrapper {
-            height: 100%;
-        }
-
-        img {
-            object-fit: contain !important;
-        }
-
-        &::after {
-            @include pseudo-elem;
-            background-color: $black-bg;
-            bottom: 0;
-            top: unset;
-            height: 1px;
-
-            @media (min-width: 1920px) {
-                height: 3px;
             }
         }
     }
