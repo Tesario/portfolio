@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby-plugin-react-i18next";
@@ -10,6 +10,7 @@ const Layout = (props) => {
   const menuRef = useRef("");
   const darkOverlayRef = useRef("");
   const hamburgerRef = useRef("");
+  const [windowLoc, setWindowLoc] = useState();
   const { t } = useTranslation();
   const { originalPath } = useI18next();
   const {
@@ -43,6 +44,12 @@ const Layout = (props) => {
     window.scrollTo(0, y);
   };
 
+  useEffect(() => {
+    if (window !== undefined) {
+      setWindowLoc(window.location.href);
+    }
+  }, []);
+
   return (
     <>
       <span
@@ -51,7 +58,7 @@ const Layout = (props) => {
         ref={darkOverlayRef}
         onClick={(e) => toggleMenu(e)}
       ></span>
-      {!/404|projects/.test(window.location.href) && (
+      {!/404|projects/.test(windowLoc) && (
         <nav id="navbar">
           <div className="container">
             <a
