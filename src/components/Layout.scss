@@ -102,15 +102,21 @@
         align-items: center;
         padding: .5rem 2.5rem;
         position: relative;
-
-        @media (max-width: $lg) {
-            height: 60px;
-        }
+        height: 60px;
     }
 
     .brand {
         width: 45px;
         height: 45px;
+    }
+
+    .arrow-back {
+        color: $white;
+        font-size: 1.7em;
+
+        &:hover {
+            filter: brightness(.9);
+        }
     }
 
     .menu-wrapper {
@@ -159,7 +165,9 @@
 
     .menu {
         display: flex;
+        justify-content: flex-end;
         transition: .4s ease-in-out;
+        min-width: 100px;
 
         @media (max-width: $lg) {
             transform: translateX(100%);
@@ -167,6 +175,7 @@
             padding: 12rem calc(2rem + 40px) 8rem 2rem;
             background-color: $black-bg;
             flex-direction: column;
+            justify-content: flex-start;
         }
     }
 }

@@ -109,7 +109,7 @@ export const data = graphql`
       }
     }
     projects: allContentfulProjects(
-      filter: { node_locale: { eq: $language } }
+      filter: { node_locale: { eq: $language }, favorite: { eq: true } }
       sort: { fields: order }
     ) {
       nodes {
@@ -119,11 +119,6 @@ export const data = graphql`
         link
         title
         technologies
-        icon {
-          file {
-            url
-          }
-        }
         image {
           fluid {
             ...GatsbyContentfulFluid

@@ -1,13 +1,20 @@
 import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
+import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faExternalLinkAlt,
+  faArrowCircleRight,
+} from "@fortawesome/free-solid-svg-icons";
 import Image from "gatsby-image";
+
 import "./WhatDidICreate.scss";
 
 const WhatDidICreate = ({ desc, projects }) => {
   const { t } = useTranslation();
+  const { projectsCount } = useStaticQuery(query);
 
   return (
     <section id="what-did-i-create">
@@ -52,10 +59,32 @@ const WhatDidICreate = ({ desc, projects }) => {
             );
           })}
         </div>
+        <div className="all-projects">
+          <h2 className="title-3">{t("allProjects")}</h2>
+          <p>
+            {t("projects-1") + projectsCount.totalCount + t("projects-2")}
+            <br />
+            {t("projects-3")}
+          </p>
+          <Link to="/projects">
+            <FontAwesomeIcon icon={faArrowCircleRight} />
+            <span className="white-overlay"></span>
+          </Link>
+        </div>
       </div>
       <span className="polygon reverse"></span>
     </section>
   );
 };
+
+const query = graphql`
+  {
+    projectsCount: allContentfulProjects(
+      filter: { node_locale: { eq: "cs" } }
+    ) {
+      totalCount
+    }
+  }
+`;
 
 export default WhatDidICreate;

@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
 import { useStaticQuery, graphql } from "gatsby";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "gatsby-plugin-react-i18next";
 import Image from "gatsby-image";
 import "./Layout.scss";
@@ -58,9 +60,9 @@ const Layout = (props) => {
         ref={darkOverlayRef}
         onClick={(e) => toggleMenu(e)}
       ></span>
-      {!/404|projects/.test(windowLoc) && (
-        <nav id="navbar">
-          <div className="container">
+      <nav id="navbar">
+        <div className="container">
+          {!/404|projects/.test(windowLoc) ? (
             <a
               href="/#"
               className="brand"
@@ -71,117 +73,125 @@ const Layout = (props) => {
             >
               <Image fluid={fluid} alt="Icon" />
             </a>
-            <div className="menu-wrapper" ref={menuRef}>
-              <ul className="menu">
-                <li>
-                  <a
-                    href="/#"
-                    onClick={(e) => {
-                      scrollToSection("#who-i-am", e);
-                      toggleMenu(e);
-                    }}
-                  >
-                    {t("whoAmI")}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/#"
-                    onClick={(e) => {
-                      scrollToSection("#what-can-i-do", e);
-                      toggleMenu(e);
-                    }}
-                  >
-                    {t("whatCanIDo")}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/#"
-                    onClick={(e) => {
-                      scrollToSection("#what-did-i-create", e);
-                      toggleMenu(e);
-                    }}
-                  >
-                    {t("whatDidICreate")}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/#"
-                    onClick={(e) => {
-                      scrollToSection("#contact", e);
-                      toggleMenu(e);
-                    }}
-                  >
-                    {t("contact")}
-                  </a>
-                </li>
-                <li>
-                  {lang === "cs" ? (
-                    <Link className="lang" to={originalPath} language="en">
-                      EN
-                    </Link>
-                  ) : (
-                    <Link className="lang" to={originalPath} language="cs">
-                      CZ
-                    </Link>
-                  )}
-                </li>
-              </ul>
-            </div>
-            <div className="hamburger">
-              <svg
-                onClick={(e) => {
-                  toggleMenu(e);
-                }}
-                ref={hamburgerRef}
-                xmlns="http://www.w3.org/2000/svg"
-                width="150"
-                height="150"
-                viewBox="0 0 200 200"
-              >
-                <g strokeWidth="6.5" strokeLinecap="round">
-                  <path
-                    d="M72 82.286h28.75"
-                    fill="#009100"
-                    fillRule="evenodd"
-                    stroke="#fff"
-                  />
-                  <path
-                    d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
-                    fill="none"
-                    stroke="#fff"
-                  />
-                  <path
-                    d="M72 125.143h28.75"
-                    fill="#009100"
-                    fillRule="evenodd"
-                    stroke="#fff"
-                  />
-                  <path
-                    d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
-                    fill="none"
-                    stroke="#fff"
-                  />
-                  <path
-                    d="M100.75 82.286h28.75"
-                    fill="#009100"
-                    fillRule="evenodd"
-                    stroke="#fff"
-                  />
-                  <path
-                    d="M100.75 125.143h28.75"
-                    fill="#009100"
-                    fillRule="evenodd"
-                    stroke="#fff"
-                  />
-                </g>
-              </svg>
-            </div>
+          ) : (
+            <Link to="/" className="arrow-back">
+              <FontAwesomeIcon icon={faArrowLeft} />
+            </Link>
+          )}
+          <div className="menu-wrapper" ref={menuRef}>
+            <ul className="menu">
+              {!/404|projects/.test(windowLoc) && (
+                <>
+                  <li>
+                    <a
+                      href="/#"
+                      onClick={(e) => {
+                        scrollToSection("#who-i-am", e);
+                        toggleMenu(e);
+                      }}
+                    >
+                      {t("whoAmI")}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/#"
+                      onClick={(e) => {
+                        scrollToSection("#what-can-i-do", e);
+                        toggleMenu(e);
+                      }}
+                    >
+                      {t("whatCanIDo")}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/#"
+                      onClick={(e) => {
+                        scrollToSection("#what-did-i-create", e);
+                        toggleMenu(e);
+                      }}
+                    >
+                      {t("whatDidICreate")}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/#"
+                      onClick={(e) => {
+                        scrollToSection("#contact", e);
+                        toggleMenu(e);
+                      }}
+                    >
+                      {t("contact")}
+                    </a>
+                  </li>
+                </>
+              )}
+              <li>
+                {lang === "cs" ? (
+                  <Link className="lang" to={originalPath} language="en">
+                    EN
+                  </Link>
+                ) : (
+                  <Link className="lang" to={originalPath} language="cs">
+                    CZ
+                  </Link>
+                )}
+              </li>
+            </ul>
           </div>
-        </nav>
-      )}
+          <div className="hamburger">
+            <svg
+              onClick={(e) => {
+                toggleMenu(e);
+              }}
+              ref={hamburgerRef}
+              xmlns="http://www.w3.org/2000/svg"
+              width="150"
+              height="150"
+              viewBox="0 0 200 200"
+            >
+              <g strokeWidth="6.5" strokeLinecap="round">
+                <path
+                  d="M72 82.286h28.75"
+                  fill="#009100"
+                  fillRule="evenodd"
+                  stroke="#fff"
+                />
+                <path
+                  d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+                  fill="none"
+                  stroke="#fff"
+                />
+                <path
+                  d="M72 125.143h28.75"
+                  fill="#009100"
+                  fillRule="evenodd"
+                  stroke="#fff"
+                />
+                <path
+                  d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+                  fill="none"
+                  stroke="#fff"
+                />
+                <path
+                  d="M100.75 82.286h28.75"
+                  fill="#009100"
+                  fillRule="evenodd"
+                  stroke="#fff"
+                />
+                <path
+                  d="M100.75 125.143h28.75"
+                  fill="#009100"
+                  fillRule="evenodd"
+                  stroke="#fff"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </nav>
       {children}
       <footer id="footer">Code & design by Vojtěch Tesař</footer>
     </>

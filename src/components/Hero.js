@@ -16,10 +16,12 @@ const Hero = () => {
     const content = document.querySelector(".content");
     const bgLinear = document.querySelector(".bg-linear");
 
-    content.style.top = window.scrollY * 0.06 + "%";
-    content.style.opacity = 1 - window.scrollY / 500;
-    bgLinear.style.setProperty("--scroll-y", window.scrollY * 0.05 + "%");
-    bgLinear.style.setProperty("--opacity", 1 - window.scrollY / 700);
+    if (content) {
+      content.style.top = window.scrollY * 0.06 + "%";
+      content.style.opacity = 1 - window.scrollY / 500;
+      bgLinear.style.setProperty("--scroll-y", window.scrollY * 0.05 + "%");
+      bgLinear.style.setProperty("--opacity", 1 - window.scrollY / 700);
+    }
   };
 
   useEffect(() => {

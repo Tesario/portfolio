@@ -13,5 +13,21 @@
     "message": "Zpráva",
     "send": "Odeslat",
     "czech": "Čeština",
-    "english": "Angličtina"
+    "english": "Angličtina",
+    "allProjects": "Všechny projekty",
+    "projects-1": "Vývoji se věnuji od roku 2020, za tuto dobu jsem měl účast na více než ",
+    "projects-2": " projektech.",
+    "projects-3": "Zde můžete najít jejich kompletní seznam:",
+    "month-1":  "Leden",
+    "month-2":  "Únor",
+    "month-3":  "Březen",
+    "month-4":  "Duben",
+    "month-5":  "Květen",
+    "month-6":  "Červen",
+    "month-7":  "Červenec",
+    "month-8":  "Srpen",
+    "month-9":  "Září",
+    "month-10":  "Říjen",
+    "month-11":  "Listopad",
+    "month-12":  "Prosinec"
   }

@@ -1,0 +1,138 @@
+@import "../assets/css/global.scss";
+
+#projects {
+    background-color: $black-bg;
+    height: 100%;
+    color: $white;
+    padding-top: 6rem;
+
+    .project {
+        margin-left: 4rem;
+        position: relative;
+        padding: 2rem;
+        display: flex;
+
+        @media (max-width: $lg) {
+            flex-direction: column;
+        }
+
+        @media (max-width:$sm) {
+            margin-left: 2rem;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            top: 2.3rem;
+            left: -1.5rem;
+            transform: translateX(-50%);
+
+            @media (max-width:$sm) {
+                left: -1.5rem;
+            }
+        }
+
+        &::after {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 100%;
+            background-color: $blue;
+        }
+
+        &:not(:last-child)::before {
+            width: 1px;
+            height: calc(100% + 2rem);
+            border-right: 1px dashed $card-text;
+        }
+
+        .date {
+            position: absolute;
+            background-color: $black-bg;
+            padding: .25rem 0;
+            top: 5rem;
+            left: -1.5rem;
+            transform: translateX(-50%);
+            text-align: center;
+
+            .year {
+                font-weight: 600;
+                font-size: 1.1em;
+            }
+
+            .month {
+                font-size: .8em;
+            }
+        }
+
+        .card-header {
+            display: flex;
+
+            @media (max-width: $lg) {
+                justify-content: center;
+            }
+
+            a {
+                font-size: 1.2em;
+                color: $blue;
+                margin: .4rem 0 0 1rem;
+
+                @media (max-width: $lg) {
+                    margin: .2rem 0 0 1rem;
+                }
+            }
+        }
+
+        .info,
+        .image {
+            flex: 1;
+        }
+
+        .info {
+            margin-right: 2rem;
+
+            @media (max-width: $lg) {
+                margin: 0 0 1.5rem;
+            }
+        }
+
+        .project-desc {
+            @media (max-width: $lg) {
+                text-align: center;
+            }
+        }
+
+        .tech-flex {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+
+            @media (max-width: $lg) {
+                justify-content: center;
+            }
+        }
+
+        .tech {
+            color: $card-text;
+            font-size: 16px;
+
+            &:not(:first-child) {
+                margin-left: 1rem;
+            }
+
+            @media (max-width: $lg) {
+                margin: 0 .75rem .25rem;
+            }
+        }
+
+        .image {
+            border-radius: 1rem;
+            overflow: hidden;
+            width: 100%;
+        }
+    }
+}
