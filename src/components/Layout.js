@@ -18,7 +18,6 @@ const Layout = (props) => {
   const {
     imageSharp: { fluid },
   } = useStaticQuery(query);
-  console.log(props);
 
   const toggleMenu = (e, alwaysClose = false) => {
     e.preventDefault();
