@@ -81,7 +81,7 @@ const Layout = (props) => {
           )}
           <div className="menu-wrapper" ref={menuRef}>
             <ul className="menu">
-              {!/projects/.test(windowLoc) && (
+              {windowLoc !== "https://vojtechtesar.gatsbyjs.io/" && (
                 <>
                   <li>
                     <a
