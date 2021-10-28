@@ -109,7 +109,7 @@ const Contact = ({ cv, languages }) => {
               >
                 {t("send")}
               </button>
-              <div className="message">Díky za zprávu</div>
+              <div className="message">{t("thanks")}</div>
             </form>
           </div>
           <div className="card card-about">
