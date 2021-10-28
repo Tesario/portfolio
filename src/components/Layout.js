@@ -74,7 +74,7 @@ const Layout = (props) => {
               <Image fluid={fluid} alt="Icon" />
             </a>
           ) : (
-            <Link to="/" className="arrow-back">
+            <Link to="/" className="arrow-back" aria-label="Homepage">
               <FontAwesomeIcon icon={faArrowLeft} />
             </Link>
           )}

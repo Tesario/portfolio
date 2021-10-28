@@ -66,7 +66,7 @@ const WhatDidICreate = ({ desc, projects }) => {
             <br />
             {t("projects-3")}
           </p>
-          <Link to="/projects">
+          <Link to="/projects" aria-label={t("allProjects")}>
             <FontAwesomeIcon icon={faArrowCircleRight} />
             <span className="white-overlay"></span>
           </Link>
