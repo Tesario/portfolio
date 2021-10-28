@@ -81,55 +81,55 @@ const Layout = (props) => {
           )}
           <div className="menu-wrapper" ref={menuRef}>
             <ul className="menu">
-              {windowLoc === "https://vojtechtesar.gatsbyjs.io/" ||
-                (windowLoc === "https://vojtechtesar.gatsbyjs.io/en/" && (
-                  <>
-                    <li>
-                      <a
-                        href="/#"
-                        onClick={(e) => {
-                          scrollToSection("#who-i-am", e);
-                          toggleMenu(e);
-                        }}
-                      >
-                        {t("whoAmI")}
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/#"
-                        onClick={(e) => {
-                          scrollToSection("#what-can-i-do", e);
-                          toggleMenu(e);
-                        }}
-                      >
-                        {t("whatCanIDo")}
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/#"
-                        onClick={(e) => {
-                          scrollToSection("#what-did-i-create", e);
-                          toggleMenu(e);
-                        }}
-                      >
-                        {t("whatDidICreate")}
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/#"
-                        onClick={(e) => {
-                          scrollToSection("#contact", e);
-                          toggleMenu(e);
-                        }}
-                      >
-                        {t("contact")}
-                      </a>
-                    </li>
-                  </>
-                ))}
+              {(windowLoc === "https://vojtechtesar.gatsbyjs.io/" ||
+                windowLoc === "https://vojtechtesar.gatsbyjs.io/en/") && (
+                <>
+                  <li>
+                    <a
+                      href="/#"
+                      onClick={(e) => {
+                        scrollToSection("#who-i-am", e);
+                        toggleMenu(e);
+                      }}
+                    >
+                      {t("whoAmI")}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/#"
+                      onClick={(e) => {
+                        scrollToSection("#what-can-i-do", e);
+                        toggleMenu(e);
+                      }}
+                    >
+                      {t("whatCanIDo")}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/#"
+                      onClick={(e) => {
+                        scrollToSection("#what-did-i-create", e);
+                        toggleMenu(e);
+                      }}
+                    >
+                      {t("whatDidICreate")}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/#"
+                      onClick={(e) => {
+                        scrollToSection("#contact", e);
+                        toggleMenu(e);
+                      }}
+                    >
+                      {t("contact")}
+                    </a>
+                  </li>
+                </>
+              )}
               <li>
                 {lang === "cs" ? (
                   <Link className="lang" to={originalPath} language="en">
