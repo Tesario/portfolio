@@ -62,7 +62,7 @@ const Layout = (props) => {
       ></span>
       <nav id="navbar">
         <div className="container">
-          {!/404|projects/.test(windowLoc) ? (
+          {windowLoc === "https://vojtechtesar.gatsbyjs.io/" ? (
             <a
               href="/#"
               className="brand"
@@ -80,7 +80,7 @@ const Layout = (props) => {
           )}
           <div className="menu-wrapper" ref={menuRef}>
             <ul className="menu">
-              {windowLoc !== "https://vojtechtesar.gatsbyjs.io/" && (
+              {windowLoc === "https://vojtechtesar.gatsbyjs.io/" && (
                 <>
                   <li>
                     <a
