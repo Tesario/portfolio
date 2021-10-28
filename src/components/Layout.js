@@ -18,6 +18,7 @@ const Layout = (props) => {
   const {
     imageSharp: { fluid },
   } = useStaticQuery(query);
+  console.log(props);
 
   const toggleMenu = (e, alwaysClose = false) => {
     e.preventDefault();
@@ -80,7 +81,7 @@ const Layout = (props) => {
           )}
           <div className="menu-wrapper" ref={menuRef}>
             <ul className="menu">
-              {!/404|projects/.test(windowLoc) && (
+              {!/projects/.test(windowLoc) && (
                 <>
                   <li>
                     <a
