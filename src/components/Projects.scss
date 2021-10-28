@@ -6,14 +6,20 @@
     color: $white;
     padding-top: 6rem;
 
+    @media (max-width: $lg) {
+        padding: 4rem 0 2rem;
+    }
+
     .project {
         margin-left: 4rem;
         position: relative;
         padding: 2rem;
         display: flex;
+        align-items: flex-start;
 
         @media (max-width: $lg) {
             flex-direction: column;
+            padding: 2.3rem 1rem 0;
         }
 
         @media (max-width:$sm) {
@@ -22,6 +28,10 @@
 
         &:not(:last-child) {
             margin-bottom: 2rem;
+
+            @media (max-width:$lg) {
+                margin-bottom: 1rem;
+            }
         }
 
         &::after,
@@ -33,7 +43,7 @@
             transform: translateX(-50%);
 
             @media (max-width:$sm) {
-                left: -1.5rem;
+                left: -1rem;
             }
         }
 
@@ -59,6 +69,10 @@
             transform: translateX(-50%);
             text-align: center;
 
+            @media (max-width:$sm) {
+                left: -1rem;
+            }
+
             .year {
                 font-weight: 600;
                 font-size: 1.1em;
@@ -71,10 +85,6 @@
 
         .card-header {
             display: flex;
-
-            @media (max-width: $lg) {
-                justify-content: center;
-            }
 
             a {
                 font-size: 1.2em;
@@ -100,19 +110,13 @@
             }
         }
 
-        .project-desc {
-            @media (max-width: $lg) {
-                text-align: center;
-            }
-        }
-
         .tech-flex {
             display: flex;
             flex-wrap: wrap;
             margin-top: 1.5rem;
 
             @media (max-width: $lg) {
-                justify-content: center;
+                margin: 1.25rem 0 0 -0.5rem;
             }
         }
 
@@ -122,10 +126,14 @@
 
             &:not(:first-child) {
                 margin-left: 1rem;
+
+                @media (max-width: $lg) {
+                    margin: .25rem .5rem 0;
+                }
             }
 
             @media (max-width: $lg) {
-                margin: 0 .75rem .25rem;
+                margin: .25rem .5rem 0;
             }
         }
 
