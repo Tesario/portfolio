@@ -72,7 +72,6 @@ const WhatDidICreate = ({ desc, projects }) => {
           </Link>
         </div>
       </div>
-      <span className="polygon reverse"></span>
     </section>
   );
 };

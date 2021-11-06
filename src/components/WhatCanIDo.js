@@ -89,7 +89,6 @@ const WhatCanIDo = ({ desc, technologies }) => {
           </div>
         </div>
       </div>
-      <span className="polygon"></span>
     </section>
   );
 };

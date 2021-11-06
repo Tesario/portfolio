@@ -37,7 +37,6 @@ const Hero = () => {
         <Image fluid={fluid} alt="Background" />
       </div>
       <span className="bg-linear"></span>
-      <span className="polygon"></span>
       <div className="container">
         <div className="content">
           <h1 className="title">Full-stack developer</h1>
