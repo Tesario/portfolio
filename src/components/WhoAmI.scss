@@ -2,15 +2,15 @@
 
 #who-i-am {
     color: $white;
-    padding: 0 0 1rem;
+    padding: 0;
 
     .content-wrapper {
         position: relative;
         background-color: $black-bg;
-        padding: 4rem 0 19rem;
+        padding: 5rem 0 19rem;
 
         @media (max-width: $lg) {
-            padding: 1rem 0 19rem;
+            padding: 3rem 0 19rem;
         }
     }
 

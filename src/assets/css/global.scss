@@ -194,10 +194,10 @@ h6 {
 }
 
 section {
-    padding: 2.5rem 0 6.5rem;
+    padding: 5rem 0;
 
     @media (max-width: $lg) {
-        padding: 1.5rem 0 4rem;
+        padding: 3rem 0;
     }
 }
 
@@ -260,27 +260,5 @@ section {
             @include pseudo-elem;
             background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 42%, rgba(0, 0, 0, 0.85) 60%, rgba(0, 0, 0, 0.1) 100%);
         }
-    }
-}
-
-.polygon {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    clip-path: polygon(60% 70%, 89% 91%, 100% 67%, 100% 100%, 0 100%, 0% 60%, 22% 93%);
-    background-color: $black-bg;
-
-    @media (max-width: 1700px) {
-        clip-path: polygon(46% 72%, 80% 85%, 100% 68%, 100% 100%, 0 100%, 0 74%, 19% 88%);
-    }
-
-    @media (max-width: $md) {
-        clip-path: polygon(68% 71%, 100% 76%, 100% 100%, 0 100%, 0 76%, 24% 80%);
-    }
-
-    &.reverse {
-        background-color: $white;
     }
 }
