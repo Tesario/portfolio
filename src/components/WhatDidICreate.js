@@ -71,7 +71,7 @@ const WhatDidICreate = ({ desc, projects }) => {
             className="btn btn-primary"
             aria-label={t("allProjects")}
           >
-            Všechny projekty{" "}
+            Všechny projekty
             <FontAwesomeIcon icon={faChevronCircleRight}></FontAwesomeIcon>
           </Link>
         </div>
