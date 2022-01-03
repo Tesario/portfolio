@@ -167,21 +167,26 @@
             }
         }
 
-        .white-overlay {
-            @include pseudo-elem;
-            width: 90%;
-            height: 90%;
-            top: 5%;
-            left: 5%;
-            border-radius: 50%;
-            background-color: $white;
+        .btn {
+            display: flex;
+            align-items: center;
+            background-color: $contact-btn;
+            padding: 1rem 1.25rem;
+
+            &:hover {
+                svg {
+                    left: .25rem;
+                }
+            }
         }
 
         svg {
-            font-size: 3em;
-            color: $blue;
             position: relative;
-            z-index: 5;
+            transition: .2s ease-in-out;
+            left: 0;
+            color: $white;
+            font-size: 1.15em;
+            margin-left: 1rem;
         }
     }
 }

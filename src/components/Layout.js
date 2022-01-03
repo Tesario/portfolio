@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "gatsby-plugin-react-i18next";
 import Image from "gatsby-image";
+import CZ from "../assets/images/cz.svg";
+import EN from "../assets/images/en.svg";
 import "./Layout.scss";
 
 const Layout = (props) => {
@@ -13,6 +15,7 @@ const Layout = (props) => {
   const darkOverlayRef = useRef("");
   const hamburgerRef = useRef("");
   const [windowLoc, setWindowLoc] = useState();
+  const [posY, posYset] = useState(0);
   const { t } = useTranslation();
   const { originalPath } = useI18next();
   const {
@@ -50,6 +53,10 @@ const Layout = (props) => {
     if (window !== undefined) {
       setWindowLoc(window.location.href);
     }
+
+    window.onscroll = () => {
+      posYset(window.scrollY);
+    };
   }, []);
 
   return (
@@ -60,7 +67,7 @@ const Layout = (props) => {
         ref={darkOverlayRef}
         onClick={(e) => toggleMenu(e)}
       ></span>
-      <nav id="navbar">
+      <nav id="navbar" className={posY ? "scrolling" : ""}>
         <div className="container">
           {windowLoc === "https://vojtechtesar.gatsbyjs.io/" ||
           windowLoc === "https://vojtechtesar.gatsbyjs.io/en/" ? (
@@ -133,11 +140,11 @@ const Layout = (props) => {
               <li>
                 {lang === "cs" ? (
                   <Link className="lang" to={originalPath} language="en">
-                    EN
+                    <img src={EN} alt="EN" />
                   </Link>
                 ) : (
                   <Link className="lang" to={originalPath} language="cs">
-                    CZ
+                    <img src={CZ} alt="CZ" />
                   </Link>
                 )}
               </li>

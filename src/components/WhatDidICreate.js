@@ -6,7 +6,7 @@ import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faExternalLinkAlt,
-  faArrowCircleRight,
+  faChevronCircleRight,
 } from "@fortawesome/free-solid-svg-icons";
 import Image from "gatsby-image";
 
@@ -66,9 +66,13 @@ const WhatDidICreate = ({ desc, projects }) => {
             <br />
             {t("projects-3")}
           </p>
-          <Link to="/projects" aria-label={t("allProjects")}>
-            <FontAwesomeIcon icon={faArrowCircleRight} />
-            <span className="white-overlay"></span>
+          <Link
+            to="/projects"
+            className="btn btn-primary"
+            aria-label={t("allProjects")}
+          >
+            Všechny projekty{" "}
+            <FontAwesomeIcon icon={faChevronCircleRight}></FontAwesomeIcon>
           </Link>
         </div>
       </div>
