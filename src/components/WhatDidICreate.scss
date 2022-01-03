@@ -147,7 +147,7 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        margin-top: 4rem;
+        margin-top: 5rem;
 
         @media (max-width: $lg) {
             margin-top: 3rem;
@@ -170,7 +170,6 @@
         .btn {
             display: flex;
             align-items: center;
-            background-color: $contact-btn;
             padding: 1rem 1.25rem;
 
             &:hover {

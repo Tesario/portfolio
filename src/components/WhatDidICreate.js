@@ -60,7 +60,6 @@ const WhatDidICreate = ({ desc, projects }) => {
           })}
         </div>
         <div className="all-projects">
-          <h2 className="title-3">{t("allProjects")}</h2>
           <p>
             {t("projects-1") + projectsCount.totalCount + t("projects-2")}
             <br />
