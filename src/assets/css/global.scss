@@ -72,6 +72,10 @@ body {
     line-height: $line-height;
     letter-spacing: .1px;
 
+    &.scroll-lock {
+        overflow: hidden;
+    }
+
     @media (max-width: $lg) {
         font-size: 16px;
     }

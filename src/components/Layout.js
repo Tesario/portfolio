@@ -1,8 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
 import { useStaticQuery, graphql } from "gatsby";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "gatsby-plugin-react-i18next";
 import Image from "gatsby-image";
 import CZ from "../assets/images/cz.svg";
@@ -14,7 +12,6 @@ const Layout = (props) => {
   const menuRef = useRef("");
   const darkOverlayRef = useRef("");
   const hamburgerRef = useRef("");
-  const [windowLoc, setWindowLoc] = useState();
   const [posY, posYset] = useState(0);
   const { t } = useTranslation();
   const { originalPath } = useI18next();
@@ -40,20 +37,23 @@ const Layout = (props) => {
   };
 
   const scrollToSection = (selector, e) => {
-    e.preventDefault();
-    const y =
-      document.querySelector(selector).getBoundingClientRect().top +
-      window.pageYOffset -
-      75;
+    if (
+      window.location.pathname === "/" ||
+      window.location.pathname === "/en/"
+    ) {
+      e.preventDefault();
+      const y =
+        document.querySelector(selector).getBoundingClientRect().top +
+        window.pageYOffset -
+        50;
 
-    window.scrollTo(0, y);
+      window.scrollTo(0, y);
+    } else {
+      window.location.href = "/";
+    }
   };
 
   useEffect(() => {
-    if (window !== undefined) {
-      setWindowLoc(window.location.href);
-    }
-
     window.onscroll = () => {
       posYset(window.scrollY);
     };
@@ -61,82 +61,64 @@ const Layout = (props) => {
 
   return (
     <>
-      <span
-        aria-hidden="true"
-        id="dark-overlay"
-        ref={darkOverlayRef}
-        onClick={(e) => toggleMenu(e)}
-      ></span>
       <nav id="navbar" className={posY ? "scrolling" : ""}>
         <div className="container">
-          {windowLoc === "https://tesarvojtech.cz/" ||
-          windowLoc === "https://tesarvojtech.cz/en/" ? (
-            <a
-              href="/#"
-              className="brand"
-              onClick={(e) => {
-                toggleMenu(e, true);
-                scrollToSection("#hero", e);
-              }}
-            >
-              <Image fluid={fluid} alt="Icon" />
-            </a>
-          ) : (
-            <Link to="/" className="arrow-back" aria-label="Homepage">
-              <FontAwesomeIcon icon={faArrowLeft} />
-            </Link>
-          )}
+          <a
+            href="/#"
+            className="brand"
+            onClick={(e) => {
+              toggleMenu(e, true);
+              scrollToSection("#hero", e);
+            }}
+          >
+            <Image fluid={fluid} alt="Icon" />
+          </a>
           <div className="menu-wrapper" ref={menuRef}>
             <ul className="menu">
-              {(windowLoc === "https://tesarvojtech.cz/" ||
-                windowLoc === "https://tesarvojtech.cz/en/") && (
-                <>
-                  <li>
-                    <a
-                      href="/#"
-                      onClick={(e) => {
-                        scrollToSection("#who-i-am", e);
-                        toggleMenu(e);
-                      }}
-                    >
-                      {t("whoAmI")}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/#"
-                      onClick={(e) => {
-                        scrollToSection("#what-can-i-do", e);
-                        toggleMenu(e);
-                      }}
-                    >
-                      {t("whatCanIDo")}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/#"
-                      onClick={(e) => {
-                        scrollToSection("#what-did-i-create", e);
-                        toggleMenu(e);
-                      }}
-                    >
-                      {t("whatDidICreate")}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/#"
-                      onClick={(e) => {
-                        scrollToSection("#contact", e);
-                        toggleMenu(e);
-                      }}
-                    >
-                      {t("contact")}
-                    </a>
-                  </li>
-                </>
-              )}
+              <li>
+                <a
+                  href="/#"
+                  onClick={(e) => {
+                    scrollToSection("#who-i-am", e);
+                    toggleMenu(e);
+                  }}
+                >
+                  {t("whoAmI")}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#"
+                  onClick={(e) => {
+                    scrollToSection("#what-can-i-do", e);
+                    toggleMenu(e);
+                  }}
+                >
+                  {t("whatCanIDo")}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#"
+                  onClick={(e) => {
+                    scrollToSection("#what-did-i-create", e);
+                    toggleMenu(e);
+                  }}
+                >
+                  {t("whatDidICreate")}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#"
+                  onClick={(e) => {
+                    scrollToSection("#contact", e);
+                    toggleMenu(e);
+                  }}
+                >
+                  {t("contact")}
+                </a>
+              </li>
               <li>
                 {lang === "cs" ? (
                   <Link className="lang" to={originalPath} language="en">
@@ -200,6 +182,12 @@ const Layout = (props) => {
             </svg>
           </div>
         </div>
+        <span
+          aria-hidden="true"
+          id="dark-overlay"
+          ref={darkOverlayRef}
+          onClick={(e) => toggleMenu(e)}
+        ></span>
       </nav>
       {children}
       <footer id="footer">Code & design by Vojtěch Tesař</footer>
@@ -209,7 +197,7 @@ const Layout = (props) => {
 
 const query = graphql`
   {
-    imageSharp(fluid: { originalName: { eq: "icon.png" } }) {
+    imageSharp(fluid: { originalName: { eq: "icon-black.png" } }) {
       fluid(maxWidth: 100) {
         ...GatsbyImageSharpFluid
       }

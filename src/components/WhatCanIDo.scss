@@ -22,11 +22,13 @@
     }
 
     .graph {
-        max-width: 600px;
+        max-width: 500px;
 
         @media (max-width: $md) {
             grid-column: 1/3;
             order: -1;
+            max-width: 350px;
+            margin: 0 auto;
         }
     }
 

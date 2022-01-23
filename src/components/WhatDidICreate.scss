@@ -21,9 +21,10 @@
         p {
             text-align: center;
 
-            a {
-                color: $blue;
-            }
+        }
+
+        a {
+            color: $blue;
         }
     }
 
@@ -140,52 +141,6 @@
         .image {
             border-radius: 1rem;
             overflow: hidden;
-        }
-    }
-
-    .all-projects {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        margin-top: 5rem;
-
-        @media (max-width: $lg) {
-            margin-top: 3rem;
-        }
-
-        p {
-            text-align: center;
-            max-width: 550px;
-            margin-bottom: 1rem;
-        }
-
-        a {
-            position: relative;
-
-            &:hover {
-                filter: brightness(.9);
-            }
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            padding: 1rem 1.25rem;
-
-            &:hover {
-                svg {
-                    left: .25rem;
-                }
-            }
-        }
-
-        svg {
-            position: relative;
-            transition: .2s ease-in-out;
-            left: 0;
-            color: $white;
-            font-size: 1.15em;
-            margin-left: 1rem;
         }
     }
 }

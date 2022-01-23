@@ -3,28 +3,25 @@
 #navbar {
     width: 100%;
     position: fixed;
-    top: 1rem;
     z-index: 1500;
-    transition: .2s linear top;
-
-    @media (max-width: $sm) {
-        top: .5rem;
-        padding: 0 .5rem;
-        box-sizing: border-box;
-    }
+    background-color: $black-bg;
+    border-bottom: 1px solid $dark;
 
     &.scrolling {
-        top: 0;
 
         .container {
-            border-radius: 0 0 30px 30px;
+            height: 60px;
         }
+    }
+
+    @media (max-width: $sm) {
+        padding: 0 .5rem;
+        box-sizing: border-box;
     }
 
     .hamburger {
         cursor: pointer;
         display: flex;
-        top: 0;
         right: 1rem;
         position: absolute;
         z-index: 2000;
@@ -102,21 +99,24 @@
     }
 
     .container {
-        background-color: $card-bg;
-        border-radius: 30px;
         box-sizing: border-box;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: .5rem 2.5rem;
+        padding: 0 2.5rem;
+        height: 100px;
         position: relative;
-        height: 60px;
-        transition: .2s linear border-radius;
+        transition: .2s ease-in-out;
+
+        @media (max-width: $lg) {
+            height: 60px;
+        }
     }
 
     .brand {
         width: 45px;
         height: 45px;
+        transition: .2s ease-in-out;
     }
 
     .arrow-back {

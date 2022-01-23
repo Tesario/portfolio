@@ -4,10 +4,7 @@ import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faExternalLinkAlt,
-  faChevronCircleRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import Image from "gatsby-image";
 
 import "./WhatDidICreate.scss";
@@ -21,6 +18,11 @@ const WhatDidICreate = ({ desc, projects }) => {
       <div className="container">
         <div className="content">
           <h2 className="title-2">{t("whatDidICreate?")}</h2>
+          <p>
+            {t("projects-1") + projectsCount.totalCount + t("projects-2")}{" "}
+            {t("projects-3")}
+            <Link to="/projects">{t("allProjects")}</Link>.
+          </p>
           {renderRichText(desc)}
         </div>
         <div className="project-flex">
@@ -58,21 +60,6 @@ const WhatDidICreate = ({ desc, projects }) => {
               </div>
             );
           })}
-        </div>
-        <div className="all-projects">
-          <p>
-            {t("projects-1") + projectsCount.totalCount + t("projects-2")}
-            <br />
-            {t("projects-3")}
-          </p>
-          <Link
-            to="/projects"
-            className="btn btn-primary"
-            aria-label={t("allProjects")}
-          >
-            {t("allProjects")}
-            <FontAwesomeIcon icon={faChevronCircleRight}></FontAwesomeIcon>
-          </Link>
         </div>
       </div>
     </section>
