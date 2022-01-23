@@ -69,8 +69,8 @@ const Layout = (props) => {
       ></span>
       <nav id="navbar" className={posY ? "scrolling" : ""}>
         <div className="container">
-          {windowLoc === "https://vojtechtesar.gatsbyjs.io/" ||
-          windowLoc === "https://vojtechtesar.gatsbyjs.io/en/" ? (
+          {windowLoc === "https://tesarvojtech.cz/" ||
+          windowLoc === "https://tesarvojtech.cz/en/" ? (
             <a
               href="/#"
               className="brand"
@@ -88,8 +88,8 @@ const Layout = (props) => {
           )}
           <div className="menu-wrapper" ref={menuRef}>
             <ul className="menu">
-              {(windowLoc === "https://vojtechtesar.gatsbyjs.io/" ||
-                windowLoc === "https://vojtechtesar.gatsbyjs.io/en/") && (
+              {(windowLoc === "https://tesarvojtech.cz/" ||
+                windowLoc === "https://tesarvojtech.cz/en/") && (
                 <>
                   <li>
                     <a

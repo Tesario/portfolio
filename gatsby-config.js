@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: "Vojtěch Tesař",
     description: "Vojtěch Tesař - Full-stack developer",
-    url: "https://vojtechtesar.gatsbyjs.io/",
+    url: "https://tesarvojtech.cz/",
     author: "Vojtěch Tesař",
     image: "./src/assets/images/icon.png",
     themeColor: "#18a0fb",
