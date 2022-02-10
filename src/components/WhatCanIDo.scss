@@ -23,12 +23,12 @@
 
     .graph {
         max-width: 500px;
+        margin: 0 auto;
 
         @media (max-width: $md) {
             grid-column: 1/3;
             order: -1;
             max-width: 350px;
-            margin: 0 auto;
         }
     }
 
