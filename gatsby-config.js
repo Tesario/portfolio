@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: "Vojtěch Tesař",
     description: "Vojtěch Tesař - Full-stack developer",
-    url: "https://tesarvojtech.cz/",
+    siteUrl: "https://tesarvojtech.cz/",
     author: "Vojtěch Tesař",
     image: "./src/assets/images/icon.png",
     themeColor: "#18a0fb",
@@ -71,5 +71,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-offline",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-robots-txt",
   ],
 };
