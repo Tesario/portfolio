@@ -27,26 +27,26 @@ const Seo = (props) => {
   const metaAuthor = props.author || author;
   const metaImage = image;
   const metaUrl = props.siteUrl || siteUrl;
-  const metaKeywords = props.keywords || [
-    "Vojtěch Tesař",
-    "Full-stack developer",
-    "Fullstack",
-    "Vývojář",
-    "Vývoj webů a webových aplikací",
-    "Web design",
-    "Responsivita",
-    "Responsivita",
-    "Kódování",
-    "Web design",
-  ];
 
   return (
     <Helmet
       title={metaTitle}
       meta={[
         {
+          name: "title",
+          content: metaTitle,
+        },
+        {
           name: "description",
           content: metaDescription,
+        },
+        {
+          property: "og:type",
+          content: "website",
+        },
+        {
+          property: "og:url",
+          content: metaUrl,
         },
         {
           property: "og:title",
@@ -57,12 +57,16 @@ const Seo = (props) => {
           content: metaDescription,
         },
         {
-          property: "og:type",
-          content: "website",
+          property: "og:image",
+          content: metaImage,
         },
         {
           name: `twitter:creator`,
           content: metaAuthor,
+        },
+        {
+          name: `twitter:url`,
+          content: metaUrl,
         },
         {
           name: `twitter:title`,
@@ -77,11 +81,7 @@ const Seo = (props) => {
           content: metaDescription,
         },
         {
-          property: "og:url",
-          content: metaUrl,
-        },
-        {
-          property: "og:image",
+          name: `twitter:image`,
           content: metaImage,
         },
         {
@@ -92,14 +92,7 @@ const Seo = (props) => {
           name: "google-site-verification",
           content: "Xvc_bLyCKhp7sGsVcjA4aPMHKb4fR5XLWrNjqH24Yds",
         },
-      ].concat(
-        metaKeywords && metaKeywords.length > 0
-          ? {
-              name: "keywords",
-              content: metaKeywords.join(", "),
-            }
-          : []
-      )}
+      ]}
     >
       <html lang={props.lang} />
     </Helmet>
