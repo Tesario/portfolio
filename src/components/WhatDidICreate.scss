@@ -113,6 +113,10 @@
             @media (max-width: $lg) {
                 text-align: center;
             }
+
+            a {
+                color: $blue;
+            }
         }
 
         .tech-flex {
