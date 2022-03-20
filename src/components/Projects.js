@@ -33,7 +33,7 @@ const Projects = ({ projects, projectsCount }) => {
                   </div>
                   <div className="info">
                     <div className="card-header">
-                      <h3 className="title-3">{title}</h3>
+                      <h2 className="title-3">{title}</h2>
                       <a
                         href={link}
                         aria-label={title}
