@@ -7,13 +7,17 @@ import Image from "gatsby-image";
 
 import "./Projects.scss";
 
-const Projects = ({ projects }) => {
+const Projects = ({ projects, projectsCount }) => {
   const { t } = useTranslation();
   let prevYear = 0;
 
   return (
     <section id="projects">
       <div className="container">
+        <div className="content">
+          <h1 className="title-2">{t("projects")}</h1>
+          <p>{t("projects-1") + projectsCount.totalCount + t("projects-2")} </p>
+        </div>
         <div className="projects">
           {projects.map(
             ({ date, title, description, link, technologies, image }) => {

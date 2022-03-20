@@ -7,7 +7,7 @@ import Projects from "../components/Projects";
 const projects = (props) => {
   const {
     pageContext: { language },
-    data: { projects },
+    data: { projects, projectsCount, whatDidICreate },
   } = props;
 
   return (
@@ -15,7 +15,11 @@ const projects = (props) => {
       <Seo lang={language} />
       <Layout lang={language}>
         <main>
-          <Projects projects={projects.nodes} />
+          <Projects
+            projects={projects.nodes}
+            projectsCount={projectsCount}
+            desc={whatDidICreate.text}
+          />
         </main>
       </Layout>
     </>
@@ -50,6 +54,19 @@ export const data = graphql`
         }
         title
         technologies
+      }
+    }
+    projectsCount: allContentfulProjects(
+      filter: { node_locale: { eq: "cs" } }
+    ) {
+      totalCount
+    }
+    whatDidICreate: contentfulDescriptions(
+      title: { eq: "Co jsem vytvořil?" }
+      node_locale: { eq: $language }
+    ) {
+      text {
+        raw
       }
     }
   }
