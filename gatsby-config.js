@@ -59,7 +59,7 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`,
-        languages: [`en`, `cs`],
+        languages: [`cs`, `en`],
         defaultLanguage: `cs`,
         siteUrl: `http://localhost:8000/`,
         i18nextOptions: {
