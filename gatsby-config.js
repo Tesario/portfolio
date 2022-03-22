@@ -61,7 +61,7 @@ module.exports = {
         localeJsonSourceName: `locale`,
         languages: [`cs`, `en`],
         defaultLanguage: `cs`,
-        siteUrl: `http://localhost:8000/`,
+        siteUrl: `https://tesarvojtech.cz/`,
         i18nextOptions: {
           interpolation: {
             escapeValue: false,
