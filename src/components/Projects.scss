@@ -167,4 +167,13 @@
             box-shadow: 0 0 25px -5px rgba($blue, 0.1), 0 0 6px 2px rgba($blue, 0.06);
         }
     }
+
+    .projects-footer {
+        display: flex;
+        justify-content: center;
+
+        @media (max-width: $lg) {
+            margin-top: 1rem;
+        }
+    }
 }

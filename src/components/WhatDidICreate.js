@@ -61,6 +61,11 @@ const WhatDidICreate = ({ desc, projects }) => {
             );
           })}
         </div>
+        <div className="projects-footer">
+          <Link to="/projects" className="btn btn-primary">
+            Zobrazit více
+          </Link>
+        </div>
       </div>
     </section>
   );

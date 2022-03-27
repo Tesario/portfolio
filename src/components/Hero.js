@@ -29,6 +29,10 @@ const Hero = () => {
       scrollEffect();
       window.addEventListener("scroll", scrollEffect);
     }
+
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
   }, []);
 
   return (

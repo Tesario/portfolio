@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -66,6 +67,11 @@ const Projects = ({ projects, projectsCount }) => {
               return project;
             }
           )}
+        </div>
+        <div className="projects-footer">
+          <Link to="/" className="btn btn-primary">
+            Zpět na hlavní stránku
+          </Link>
         </div>
       </div>
     </section>
