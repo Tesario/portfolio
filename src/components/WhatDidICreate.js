@@ -55,7 +55,7 @@ const WhatDidICreate = ({ desc, projects }) => {
                   </div>
                 </div>
                 <div className="image">
-                  <Image fluid={project.image.fluid} />
+                  <Image fluid={project.image.fluid} alt={project.title} />
                 </div>
               </div>
             );

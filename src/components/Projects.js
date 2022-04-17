@@ -58,7 +58,7 @@ const Projects = ({ projects, projectsCount }) => {
                     </div>
                   </div>
                   <div className="image">
-                    <Image fluid={image.fluid} />
+                    <Image fluid={image.fluid} alt={title} />
                   </div>
                 </div>
               );
