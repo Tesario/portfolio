@@ -12,7 +12,11 @@ const projects = (props) => {
 
   return (
     <>
-      <Seo lang={language} />
+      <Seo
+        lang={language}
+        title="Vojtěch Tesař | Projekty"
+        description="Vojtěch Tesař, kompletní seznam projektů"
+      />
       <Layout lang={language}>
         <main>
           <Projects
