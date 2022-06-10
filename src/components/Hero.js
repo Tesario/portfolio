@@ -2,9 +2,11 @@ import React, { useEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import Image from "gatsby-image";
+import { useTranslation } from "react-i18next";
 import "./Hero.scss";
 
 const Hero = () => {
+  const { t } = useTranslation();
   const {
     contentfulHeroSection: {
       motto,
@@ -43,7 +45,7 @@ const Hero = () => {
       <span className="bg-linear"></span>
       <div className="container">
         <div className="content">
-          <h1 className="title">Vývojář a kodér</h1>
+          <h1 className="title">{t("developer")}</h1>
           <h2 className="title-2">Vojtěch Tesař</h2>
           <h3 className="title-3">{renderRichText(motto)}</h3>
         </div>
