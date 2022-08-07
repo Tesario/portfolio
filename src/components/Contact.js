@@ -114,7 +114,7 @@ const Contact = ({ cv, languages }) => {
           </div>
           <div className="card card-about">
             <div className="name">Vojtěch Tesař</div>
-            <div className="job">Full-stack developer</div>
+            <div className="job">{t("developer")}</div>
             <a
               href={cv.file.url}
               target="_blank"
