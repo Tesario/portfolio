@@ -191,7 +191,7 @@
         align-items: center;
         position: relative;
         z-index: 50;
-        margin: 0 0 -1.25rem;
+        margin: 0 .5rem -3.25rem 0;
 
         @media (max-width: $lg) and (min-width: $sm) {
             box-sizing: border-box;
@@ -238,13 +238,14 @@
         display: flex;
         align-items: center;
 
-        &:last-child {
-            margin-top: 1rem;
+        &:not(:last-child) {
+            margin-bottom: 1rem;
         }
 
         svg {
             margin-right: 1rem;
             font-size: 1.5em;
+            min-width: 27px;
         }
 
         &:hover {

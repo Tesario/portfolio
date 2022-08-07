@@ -3,7 +3,7 @@ import { useForm } from "@formspree/react";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import "./Contact.scss";
 
 const Contact = ({ cv, languages }) => {
@@ -123,6 +123,15 @@ const Contact = ({ cv, languages }) => {
             >
               <FontAwesomeIcon icon={faDownload} />
               CV
+            </a>
+            <a
+              href="https://linkedin.com/in/vojtěch-tesař-91a819242"
+              rel="noreferrer"
+              target="_blank"
+              className="link"
+            >
+              <FontAwesomeIcon icon={faLinkedin} />
+              LinkedIn
             </a>
             <a
               href="https://github.com/"
