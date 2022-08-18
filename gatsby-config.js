@@ -76,7 +76,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        policy: [{ "User-agent": "googlebot-image", Disallow: "/" }],
+        policy: [{ userAgent: "googlebot-image", disallow: "/" }],
       },
     },
   ],
