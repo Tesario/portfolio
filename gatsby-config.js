@@ -73,6 +73,11 @@ module.exports = {
     },
     "gatsby-plugin-offline",
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-robots-txt",
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        policy: [{ "User-agent": "googlebot-image", Disallow: "/" }],
+      },
+    },
   ],
 };
