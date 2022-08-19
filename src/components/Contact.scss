@@ -21,7 +21,7 @@
 
     .card-grid {
         display: grid;
-        grid-template-columns: 500px 270px 0;
+        grid-template-columns: 500px 280px 0;
         place-items: flex-end;
         margin: 0 0 2rem 0;
 
@@ -191,7 +191,7 @@
         align-items: center;
         position: relative;
         z-index: 50;
-        margin: 0 .5rem -3.25rem 0;
+        margin: 0 .5rem -3.55rem 0;
 
         @media (max-width: $lg) and (min-width: $sm) {
             box-sizing: border-box;
@@ -257,7 +257,7 @@
         padding: 3rem;
         width: 220px;
         height: 385px;
-        margin: 0 3rem 6rem 0;
+        margin: 0 5rem 6rem 0;
         display: flex;
         align-items: flex-end;
         flex-direction: column;
