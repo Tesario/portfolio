@@ -17,7 +17,7 @@ const Projects = ({ projects, projectsCount }) => {
       <div className="container">
         <div className="content">
           <h1 className="title-2">{t("projects")}</h1>
-          <p>{t("projects-1") + projectsCount.totalCount + t("projects-2")} </p>
+          <p>{t("projects-1") + projectsCount.totalCount + t("projects-2")}</p>
         </div>
         <div className="projects">
           {projects.map(

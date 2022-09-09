@@ -45,7 +45,7 @@ const WhatCanIDo = ({ desc, technologies }) => {
       <div className="container">
         <div className="content">
           <h2 className="title-2">{t("whatCanIDo?")}</h2>
-          {renderRichText(desc)}
+          <p>{renderRichText(desc)}</p>
         </div>
         <div className="grid-tech">
           <div className="column">
