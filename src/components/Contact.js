@@ -129,7 +129,7 @@ const Contact = ({ cv, languages }) => {
               LinkedIn
             </a>
             <a
-              href="https://github.com/"
+              href="https://github.com/Tesario"
               rel="noreferrer"
               target="_blank"
               className="link"
