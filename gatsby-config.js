@@ -4,9 +4,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "Vojtěch Tesař | Vývojář a kodér",
+    title: "Vojtěch Tesař | Full-Stack Developer",
     description:
-      "Vojtěch Tesař, vývojář a kodér, vývoj a optimalizace webových stránek a aplikací.",
+      "Vojtěch Tesař, Full-Stack Developer, vývoj a optimalizace webových stránek a aplikací.",
     siteUrl: "https://tesarvojtech.cz/",
     author: "Vojtěch Tesař",
     image: "https://tesarvojtech.cz/icons/icon-512x512.png",
