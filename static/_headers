@@ -1,0 +1,9 @@
+/*
+Referrer-Policy: no-referrer
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: DENY
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Content-Security-Policy: upgrade-insecure-requests
+X-Content-Type-Options: nosniff
+Cache-Control: max-age=31536000
+Access-Control-Allow-Origin: https://tesarvojtech.cz
